@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>javaScript</title>
+	<script type="text/javascript">
+        
+        function factorilize(num) {
+            var factorial = num;
+            var n = num;
+            console.log('factorial  of ' + factorial + '! worked out :');
+    
+            while(n != 1){
+                console.log('n = ' + n + '- 1');
+                n = n - 1;
+                console.log('n = ' + n);
+                
+                num = num * n;
+                console.log('num = ' + num + ' * ' + n);
+                console.log('num = ' + num);
+            }
+
+            console.log(factorial + '! =' + num);
+            return num;
+
+        }
+           
+        factorilize(5);
+        factorilize(10);
+        factorilize(3);
+
+	</script>
+</head>
+<body>
+    <p>Open the Console to see the results.</p>
+    <p>This a program finds the factorial of a given number.</p>
+</body>
+</html>

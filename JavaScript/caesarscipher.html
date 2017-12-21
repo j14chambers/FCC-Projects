@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>javaScript</title>
+	<script type="text/javascript">
+
+		function rot13(str) { // LBH QVQ VG!
+  			console.log (str);
+  			var newStr = '';
+  			for (var i = 0; i < str.length; i++){
+  				var letter = str.charAt(i);
+  				//console.log (letter);
+  				var code = letter.charCodeAt();
+  				//console.log (code);
+
+
+  				if (code > 77){
+  					ascii = code - 13;
+  					//console.log (ascii);
+  				}
+  				else if (code < 65 ){
+  					ascii = code;
+  					//console.log (ascii);
+  				}
+  				else{
+  					var ascii = code + 13;
+  					//console.log (ascii);
+  				}
+  				var sipher = "";
+  				var sipher = String.fromCharCode(ascii);
+  				newStr += sipher;
+
+  				
+
+  				
+  			}
+  			console.log (newStr);
+  			
+  				return newStr;
+		}
+
+
+		rot13("SERR PBQR PNZC");
+		rot13("SERR CVMMN!");
+	</script>
+</head>
+<body>
+    <h1>Caesars Cipher</h1>
+    <p>Open the Console to see the results.</p>
+    <h2>Program Decription</h2>
+    <p>Program Decription</p>
+    <h2>Examples</h2>
+</body>
+</html>

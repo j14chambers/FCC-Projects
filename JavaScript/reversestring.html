@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>javaScript</title>
+	<script type="text/javascript">
+        
+        //This code reverses the letters in a string.
+        function reverseString(str) {
+            console.log(str);
+            
+            var newStr = str.split('');
+            console.log('This is the word split: ' + newStr);
+            
+            newStr.reverse();
+            console.log('This is the letters reversed: ' +newStr);
+            
+            strjoin = newStr.join(" ");
+            console.log('the word ' + str + ' became ' + strjoin);
+            return str;
+            
+
+        }
+        function reverseWord(str) {
+            return str.split('').reverse().join('');
+        }
+        
+                
+        reverseString("juke");
+        reverseString("buzz");
+        reverseString('gorilla');
+        
+        reverseWord('juke');
+        
+        
+        //How to split an array
+        function splitString(stringToSplit, separator) {
+            var arrayOfStrings = stringToSplit.split(separator);
+
+            console.log('The original string is: "' + stringToSplit + '"');
+            console.log('The separator is: "' + separator + '"');
+            console.log('The array has ' + arrayOfStrings.length + ' elements: ' + arrayOfStrings.join(' / '));
+        }
+
+        var tempestString = 'Oh brave new world that has such people in it.';
+        var monthString = 'Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec';
+        
+        //My Test Variable
+        var testsplitstr = 'concentation230 23220,20 0230 020 ,sjdosdd';
+
+        var space = ' ';
+        var comma = ',';
+
+        splitString(tempestString, space);
+        splitString(tempestString);
+        splitString(monthString, comma);
+        
+        //my Test Variable
+        splitString(testsplitstr,space);
+        
+
+	</script>
+</head>
+<body>
+    <p>Open the Console to see the results.</p>
+    <p>This a program that reverses the letters in a word.</p>
+</body>
+</html>

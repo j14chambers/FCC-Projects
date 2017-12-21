@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>javaScript</title>
+	<script type="text/javascript">
+		function getIndexToIns(arr, num) {
+			console.log (arr);
+			console.log (num);
+			//var newArr = [];
+			var newArr = arr.concat(num);
+			console.log (newArr);
+
+			sortArr = newArr.sort(function(a, b) {
+  				return a - b;
+			});
+			console.log(sortArr);
+
+			for (var i = 0; i < newArr.length; i++) {
+				if (newArr[i] === num){
+					console.log (newArr[i]);
+					console.log (i);
+					return i;
+				}
+			}
+		}
+		getIndexToIns([40, 60], 50);
+		getIndexToIns([2, 5, 10], 15);
+
+	</script>
+</head>
+<body>
+    <h1>Where Do I Belong?</h1>
+    <p>Open the Console to see the results.</p>
+    <h2>Program Decription</h2>
+    <p>Sorts an array by arranging the array from least to greatest. It returns the position of the variable, num after concation and sort.</p>
+    <h2>Examples</h2>
+</body>
+</html>

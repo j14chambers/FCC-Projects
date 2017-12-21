@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>javaScript</title>
+	<script type="text/javascript">
+
+        function slasher(arr, howMany) {
+            console.log(arr);
+            console.log('How Many: ' + howMany);
+            console.log (arr.length);
+
+            var arrSplice = arr.splice(howMany);
+            console.log (arrSplice);
+        }
+
+        slasher([1, 2, 3], 2);
+        slasher([1, 2, 3], 0);
+        slasher([1, 2, 3], 4);
+        slasher([1, 2, 3], 9);
+        slasher([1, 2, "chicken", 3, "potatoes", "cheese", 4], 5);
+	</script>
+</head>
+<body>
+    <h1>Slasher Flick</h1>
+    <p>Open the Console to see the results.</p>
+    <p>This program deletes the beginning of an array up to a given point, howMany, then returns everything after.  <br>
+        Example: <br>
+        [1, 2, 3], 2<br> Outputs: 
+        <b>[3]</b> </p>
+</body>
+</html>

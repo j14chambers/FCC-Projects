@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Repeat String</title>
+	<script type="text/javascript">
+        
+        function repeaatStringNumTimes (str, num) {
+            console.log (str);
+            console.log ('repeat : ' + num);
+            
+            i = 1;
+            var repeatStr = str;
+            if (num > 0){
+                while (i != num){
+                    //console.log(str);
+                    repeatStr = repeatStr + str;
+                    i++;
+                }
+                console.log (repeatStr);
+                //repeatStr = repeatStr + str;
+                
+            }
+            else{
+                repeatStr = '';
+                console.log (repeatStr);
+            }
+            return repeatStr;
+        }
+        
+        //Free Code Camp Answer
+        function repeatStringNumTimes(fccstr, fccnum) {
+            if(fccnum>0){
+                return fccstr.repeat(fccnum);
+            }
+            return "";
+        }
+        
+        repeaatStringNumTimes('abc', 3);
+        repeaatStringNumTimes('abc is here', -4);
+        repeaatStringNumTimes('abc', 1);
+        repeaatStringNumTimes('*', 8);
+        
+	</script>
+</head>
+<body>
+    <h1>Repeat String</h1>
+    <p>Open the Console to see the results.</p>
+    <p>This programs repeats a string a given number of time, num.</p>
+</body>
+</html>

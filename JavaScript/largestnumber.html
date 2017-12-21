@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>javaScript</title>
+	<script type="text/javascript">
+
+
+        function largestOfFour(arr) {
+           // console.log(arr.length);
+           
+           var array = new Array;
+            var arrLength = 0;
+            while (arrLength != arr.length){
+                console.log(arr[arrLength]);
+                
+                //Array inside of Array
+                var numberArray = 0;
+                while (numberArray != arr[arrLength].length){
+                    //console.log (arr[arrLength][numberArray]);
+                    numberArray ++;
+
+                    var largestArrayNumber = arr[arrLength].reduce(function (a, b){
+                        var largestNumber = Math.max(a, b);
+                        //console.log ('number of array: ' + largestArrayNumber);
+                        return largestNumber;
+
+                    });
+                   
+                }
+                console.log ('largest number in Array' + arrLength + ': ' + largestArrayNumber);
+                array.push(largestArrayNumber);
+                arrLength ++;
+            }
+            console.log('the largest in the set of arrays: ' + array);
+            return array;
+        }
+
+        largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 112000, 37, 39], [1000, 100, 857, 1]]);
+
+
+
+	</script>
+</head>
+<body>
+    <h1>Return Largest Numbers in Arrays</h1>
+    <p>Open the Console to see the results.</p>
+    <p>This a program loops through each array and find the largest number. Then it stores the largest array in an array</p>
+</body>
+</html>

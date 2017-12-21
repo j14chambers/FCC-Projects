@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>javaScript</title>
+	<script type="text/javascript">
+        function chunkArrayInGroups(arr, size) {
+            console.log ('Array: ' + arr);
+            console.log ('Size ' + size);
+            console.log ('Array length ' + arr.length);
+
+             var pushArr = [];
+            for (var i = 0; i < arr.length; i += size) {
+
+                pushArr.push(arr.slice(i, i + size));
+                //console.log(pushArr);
+            }
+            console.log(pushArr);
+
+            return pushArr;
+        }
+
+        chunkArrayInGroups(["a", "b", "c", "d"], 2);
+        chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4);
+        chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3);
+        chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2); 
+        chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3);
+        chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4);
+        chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2);
+       
+	</script>
+</head>
+<body>
+    <h1>Chunky Monkey</h1>
+    <p>Open the Console to see the results.</p>
+    <p>This a program separates an array into multiple arrays by giving each array an given size. <br>
+        Example: <br>
+        [0, 1, 2, 3, 4, 5],4 will return <br>
+        [[0, 1, 2, 3], [4, 5]] <br>
+
+        [0, 1, 2, 3, 4, 5],2 will return <br>
+        [[0, 1], [2, 3], [4, 5]]
+      </p>
+</body>
+</html>

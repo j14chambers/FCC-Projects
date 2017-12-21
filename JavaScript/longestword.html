@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>javaScript</title>
+	<script type="text/javascript">
+        
+        function findLongestWord (str) {
+
+            var arrayofStr = str.split(' ');
+            console.log('The array has ' + arrayofStr.length + ' elements: ' + arrayofStr.join(' / '));
+
+            arrayofStr.split;
+ 
+            var longest = 0;
+            var longestStr = '';
+
+            for (var i = 0; i < arrayofStr.length; i++) {
+                console.log (i + '. ' + arrayofStr[i] + ' length is ' + arrayofStr[i].length);
+
+                if (arrayofStr[i].length > longest) {
+                    longest = arrayofStr[i].length;
+                    longestStr = arrayofStr[i];
+                }
+
+            }
+            
+            console.log ('The longest word is ' + longestStr + '. The length is ' + longest);
+        }
+
+        // Call Function and declare local variables
+        findLongestWord('kill the show with all the greatest performers');
+        findLongestWord ('The quick brown fox jumped orver the lazy dog');
+        
+
+	</script>
+</head>
+<body>
+    <p>Open the Console to see the results.</p>
+    <p>This a program that reverses the letters in a word.</p>
+</body>
+</html>

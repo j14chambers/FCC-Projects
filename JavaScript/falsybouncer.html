@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>javaScript</title>
+	<script type="text/javascript">
+        function bouncer (arr) {
+            console.log (arr);
+            const results = arr.filter(Boolean);
+            console.log (results);
+            return results;
+        }
+
+        bouncer([7,'ate', '', false, 9]);
+        bouncer(["a", "b", "c"]);
+        bouncer([false, null, 0, NaN, undefined, ""]);
+        bouncer([1, null, NaN, 2, undefined]);
+	</script>
+</head>
+<body>
+    <h1>Falsy Bouncer</h1>
+    <p>Open the Console to see the results.</p>
+    <h2>Program Decription</h2>
+    <p>Remove all false values from an array.<br>
+        False values include: <b>false</b>, <b>null</b>, <b>0</b>, <b>''</b>, <b>undefined</b>, <b>NaN</b>.</p>
+    <h2>Examples</h2>
+    <p>bouncer([7,'ate', '', false, 9]); <br> returns <b>[7,'ate', 9]</b></p>
+    <p>bouncer([false, null, 0, NaN, undefined, ""]); <br> returns <b>[]</b></p>
+    <p>bouncer([1, null, NaN, 2, undefined]); <br> returns <b>[1, 2]</b></p>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>javaScript</title>
+	<script type="text/javascript">
+
+        function mutation (arr) {
+            console.log (arr);
+
+            var arr0 = arr[0].toLowerCase();
+            console.log (arr0);
+
+            var arr1 = arr[1].toLowerCase();
+            console.log (arr1);
+            
+            for (var i = 0; i < arr1.length; i ++){
+                var indexArr = arr0.indexOf(arr1[i]);
+                    
+                if (indexArr === -1) {
+                    console.log (arr1[i] + ' not found ');
+                    return false;
+                }
+            }
+            return true;
+                              
+        }
+
+        mutation (['hello', 'hey']);    //false
+        mutation (['Alien', 'line']);   //true
+        mutation(["hello", "Hello"]);   //true
+        mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"]); //true
+        mutation(["Mary", "Aarmy"]);    //true
+        mutation(["Mary", "Army"]);     //true
+        mutation(["Mary", "Aumy"]);     //true
+
+	</script>
+</head>
+<body>
+    <h1>Mutation</h1>
+    <p>Open the Console to see the results.</p>
+    <p>This program returns false if any of the letters in a[1] are not found in arr[0]. Otherwise the program returns true.</p>
+</body>
+</html>

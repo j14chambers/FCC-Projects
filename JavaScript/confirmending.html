@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Comfirm the Ending</title>
+	<script type="text/javascript">
+
+       function confirmEnding (str, target) {
+           console.log ('str: ' + str + ' target: ' + target);
+
+            var strArray = str.split(' ');
+            var lastWord = strArray[strArray.length - 1];
+            console.log ('Last Word: ' + lastWord);
+         
+           if ( lastWord === target || str.substr(-1) === target){
+               console.log ('true');
+               return true;
+           }
+           
+           if(str.substr(-target.length) === target){
+               console.log ('true');
+               return true;
+           }
+           else{
+               console.log ('false');
+               return false;
+           }
+           
+           return str;
+       
+        
+        }
+        
+        //console.log ('Is the str last letter the same as the target ?');
+        //confirmEnding ('Bastian', 'n');
+        //confirmEnding ('apple', 'p');
+        //confirmEnding("He has to give me a new name", "name");
+        //confirmEnding("Open sesame", "pen");
+        //confirmEnding("Open nt", "n");
+        confirmEnding("Open sesame", "same")
+        
+	</script>
+</head>
+<body>
+    <h1>Confirm the Ending</h1>
+    <p>Open the Console to see the results.</p>
+    <p>This programs return true if the last word or letter is the same as the target. Otherwise it returns false.</p>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>javaScript</title>
+	<script type="text/javascript">
+
+        function palindrome(str){
+            
+            console.log(str);
+            var lowerCase = str.toLowerCase();
+
+            var string = lowerCase.replace(/[^0-9a-z]/gi, '');
+            var stringOut = string.replace(/[^A-Za-z0-9]/g, '');
+
+            var reversed = string.split('').reverse().join('');
+            var reversedStringOut = stringOut.split('').reverse().join('');
+
+            console.log('lowerCase ' + lowerCase);  //check for lowercase
+            console.log('string ' + string);        //check for special chanarcters remove
+            console.log('stringOut ' + stringOut);  // check for specical characters remove
+
+            //check for all letters reversed in string
+            console.log('reversed ' + reversed);   
+            console.log('reversedStringOut ' + reversedStringOut); 
+    
+            //compare reversed string with lowercased string with special characters removed.
+            if(reversed === stringOut){
+
+                console.log("This is a Palindrome.");
+                return true;
+            }
+
+            else{
+                console.log("This string is NOT a Palindrome.");
+                return false;
+            }
+        }
+
+        // FCC Answer
+        function palindromeFCC(str) {
+            return str.replace(/[\W_]/g, '').toLowerCase() ===
+            str.replace(/[\W_]/g, '').toLowerCase().split('').reverse().join('');
+        }
+
+        palindrome('eye');
+        palindrome('hue');
+        palindrome('this is a WORD witH sentence');
+        console.log('NEXT WORD');
+
+        palindrome('_eye');
+        palindrome("0_0 (: /-\ :) 0-0");
+        palindrome("almostomla");
+        palindrome("My age is 0, 0 si ega ym.");
+          
+
+	</script>
+</head>
+<body>
+    <p>Open the Console to see the results.</p>
+    <p>This programs return true if the string is a palindrome. 
+        <br>Palindrome is a wor or sentence that's spelled the same way forward or backward. This program ignores all non numeric and non alphabetic characters.
+        <br>This program took code from reversestring.html to compare the string in reverse. Withe the three strings tested, this code works so far.</p>
+</body>
+</html>

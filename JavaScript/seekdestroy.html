@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>javaScript</title>
+	<script type="text/javascript">
+		
+		function destroyer(arr) {
+			console.log (arr);
+			var args = Array.prototype.slice.call(arguments, 1);
+			console.log (args);
+
+			var destroy1 = args[0];
+			var destroy2 = args[1];
+			console.log ('destroy ' + destroy1);
+			console.log ('destroy ' + destroy2);
+
+			for (var i = 0; i < arr.length; i++){
+				//console.log ('arr[' + i + '] = ' + arr[i]);
+				for ( var a = 0; a < args.length; a ++){
+					if(arr[i] === args[a]){
+					delete arr[i];
+					}
+				}
+			}
+
+			//var filtered = arr.filter(destroyValue);
+			var filtered = arr.filter(Boolean);
+			console.log (filtered);
+
+		}
+		
+		destroyer([1, 2, 3, 1, 2, 3], 2, 3);
+		destroyer([2, 3, 2, 3], 2, 3);
+		destroyer(["tree", "hamburger", 53], "tree", 53);
+		destroyer([3, 5, 1, 2, 2], 2, 3, 5);
+
+	</script>
+</head>
+<body>
+    <h1>Seek and Destroy</h1>
+    <p>Open the Console to see the results.</p>
+    <h2>Program Decription</h2>
+    <p>Remove all elements from the first array that are same values of the aguments.</p>
+    <h2>Examples</h2>
+</body>
+</html>

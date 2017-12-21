@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>javaScript</title>
+	<script type="text/javascript">
+
+        function titleCase (str) {
+
+            console.log(str);
+            var newStr = str.toLowerCase().split(' ');
+            var strUpper = '';
+            newStr.split;  
+            var sentence = '';
+
+            // Loop for upper casing 1st letter
+            var i = 0;
+            while (i != newStr.length) {
+                strUpper = newStr[i].charAt(0).toUpperCase();
+                otherLetter = newStr[i].substr(1);
+                x = strUpper.toUpperCase() + otherLetter;
+                sentence = sentence + ' ' + x;
+                
+                i++;
+            }
+            
+            console.log('sentence = ' + sentence.substr(1));
+            return sentence.substr(1);
+        }
+
+        titleCase('Im a little tea pot');
+        titleCase('HOMe is NOt HEre ItS oVER tHeRE');
+        titleCase("I'm a little tea pot");
+        titleCase("sHoRt AnD sToUt");
+
+        //var str = "Mr Blue has a blue house and a blue car";
+        //var res = str.replace(/blue|house|car/gi, function myFunction(x){return x.toUpperCase();}); 
+        //console.log(res);
+
+	</script>
+</head>
+<body>
+    <h1>Title Case a Sentence</h1>
+    <p>Open the Console to see the results.</p>
+    <p>This a program uppercase the first letter of each word.</p>
+</body>
+</html>

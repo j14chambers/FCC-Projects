@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>javaScript</title>
+	<script type="text/javascript">
+
+        function truncateString(str, num) {
+        console.log(str);
+        console.log(num);
+        console.log (str.length);
+        if (str.length > num && num <= 3){
+            var strSlice = str.slice(0, num);
+            console.log(strSlice + '...');
+        }
+        
+       else if (str.length > num && num > 3){
+            var strSlice = str.slice(0, num - 3);
+            console.log(strSlice + '...');
+        }
+
+        else{
+            console.log (str);
+        }
+        }
+
+        truncateString("A-tisket a-tasket A green and yellow basket", 11);
+        truncateString("A-", 1);
+        truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length);
+        truncateString("Peter Piper picked a peck of pickled peppers", 14);
+        truncateString("Absolutely Longer", 2);
+        truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length + 2);
+	</script>
+</head>
+<body>
+    <h1>Truncate A String</h1>
+    <p>Open the Console to see the results.</p>
+    <p>This a program that truncates a given string, str, with a given length, num.  <br>
+        Example: <br>
+        'A-tisket a-tasket A green and yellow basket', 11 <br> Output: 
+        <b>A-tisket...</b> </p>
+</body>
+</html>
