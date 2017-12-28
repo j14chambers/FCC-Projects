@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Local Weather App</title>
+	<link rel="stylesheet" type="text/css" href="localweather.css">
+	<link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet"> 
+</head>
+<body>
+	<header>
+		<h1>Local Weather Update</h1>
+	</header>
+
+	<div>
+		<div class="border">
+			<h2 id="location"></h2>
+			<h2 id="city"></h2>
+			<h2 id="tempature"></h2>
+			<h2 id="tempF"></h2>
+			<a id="temp-unit" href="#">Change Unit</a>
+			
+
+			<h2 id="icon"></h2>
+
+			<div class="icon sun-shower hide drizzle">
+  				<div class="cloud"></div>
+  				<div class="sun">
+    				<div class="rays"></div>
+  				</div>
+  				<div class="rain"></div>
+			</div>
+
+			<div class="icon thunder-storm hide thunderstorm">
+			  	<div class="cloud"></div>
+			  	<div class="lightning">
+			    	<div class="bolt"></div>
+			    	<div class="bolt"></div>
+			  	</div>
+			</div>
+
+			<div class="icon cloudy hide clouds">
+			  	<div class="cloud"></div>
+			  	<div class="cloud"></div>
+			</div>
+
+			<div class="icon flurries hide snow">
+			  	<div class="cloud"></div>
+			  	<div class="snow">
+			    	<div class="flake"></div>
+			    	<div class="flake"></div>
+			  	</div>
+			</div>
+
+			<div class="icon sunny hide clear">
+			  	<div class="sun">
+			    	<div class="rays"></div>
+			  	</div>
+			</div>
+
+			<div class="icon rainy hide rain">
+			  	<div class="cloud"></div>
+			  	<div class="rain"></div>
+			</div>
+
+			<p>Based on <a href="https://dribbble.com/shots/2097042-Widget-Weather" target="_blank">Dribbble</a> by kylor</p></div>
+		</div>
+
+
+	<!-- JQUERY -->
+     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script type="text/javascript" src="localweather.js"></script> 
+</body>
+</html>
