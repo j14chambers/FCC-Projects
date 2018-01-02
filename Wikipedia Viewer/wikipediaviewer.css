@@ -1,0 +1,52 @@
+body, html{
+	padding: 0;
+	margin: 0;
+	background-color: #16324f;
+	color: #d6d9ce;
+	text-align: center;
+	width: 100%;
+} 
+h1{
+	text-align: center;
+	color: #d6d9ce;
+	font-size: 50px;
+}
+h3{
+	text-align: center;
+	font-size: 30px;
+	color: #d6d9ce;
+	padding-bottom: 0;
+	margin-bottom: 5px;
+}
+.center div{
+	margin: 0 30%;
+}
+form{
+	padding: 10px;
+	margin: 10px 10px;
+	display: inline-flex;
+}
+#search-click img{
+	padding-left: 10px;
+	vertical-align: middle;
+}
+#input-search{
+	padding: 10px;
+	width: 400px;
+	color: #16324f;
+}
+input{
+	border-radius: 25px;
+}
+#random-search img{
+	margin: 0 50%;
+}
+footer{
+	margin-top: 100px;
+}
+footer a{
+	text-decoration: none;
+	color: #d6d9ce;
+	text-align: center;
+	font-size: 20px;
+}
