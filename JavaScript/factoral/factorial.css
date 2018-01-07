@@ -7,12 +7,27 @@ body, html{
     font-size: 25px;
 	background-color: #0c8346;
 	color: #dbdfac;
+	font-family: 'Raleway', sans-serif;
+}
+header{
+	padding: 0;
+	margin: 0;
+}
+body{
+	display: table;
+	width: 100%;
 }
 h1{
 	text-align: center;
 	font-size: 60px;
+	font-family: 'Oswald', sans-serif;
 }
 h2{
+	font-size: 35px;
+	font-family: 'Oswald', sans-serif;
+}
+h3{
+	font-family: 'Oswald', sans-serif;
 	font-size: 30px;
 }
 button{
@@ -42,4 +57,52 @@ footer{
 a{
 	text-decoration: none;
 	color: currentColor;
+	display: inline-block;
 }
+.active{
+	background-color: #679289;
+	color: #dbbfac;
+}
+
+
+.sidenav{
+	height: 100%;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	padding-top: 20px;
+	background-color: #dbdfac;
+}
+
+#sidenav-1{
+	display: table-cell;
+	width: 20%;
+}
+.sidenav a:hover{
+	color: #db162f;
+}
+.sidenav a{
+	padding: 10px 5px;
+	margin: 5px 0;
+	font-size: 20px;
+}
+.sidenav ul{
+	list-style: none;
+	text-align: center;
+	padding: 0;
+}
+.sidenav li{
+	border: 5px solid #679289;
+	color: #0c8346;
+	padding: 0 15px;
+	margin: 0;
+}
+
+#content{
+	padding: 0px 10px;
+	display: table-cell;
+	width: 80%;
+}
+

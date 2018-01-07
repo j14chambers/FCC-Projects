@@ -15,7 +15,7 @@ function factorilize(num) {
     var factorial = num;
     var n = num;
     console.log('factorial  of ' + factorial + '!: ');
-    $('#factorial-input').html('<p>The Factorial  of ' + factorial + '! is: </p>');
+    $('#factorial-input').html('<p>The Factorial  of ' + factorial + ' is: </p>');
 
 
     while(n != 1){
@@ -38,4 +38,12 @@ function factorilize(num) {
     $('#factorial-answer').html('<p>' + factorial + '! = ' + num + '</p>');
 
 }
+
+$(document).ready(function() {
+    $("[href]").each(function() {
+        if (this.href == window.location.href) {
+            $('#currentLink').addClass("active");
+        }
+    });
+});
 

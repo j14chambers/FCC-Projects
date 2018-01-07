@@ -3,35 +3,59 @@
 <head>
 	<title>Factorial</title>
     <link rel="stylesheet" type="text/css" href="factorial.css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Raleway" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>Factorial Solver</h1>
-        <h2>Enter in a number greater than 1 for the Factorial.</h2>
+        <div class="sidenav" id="sidenav-1">
+            <ul>
+                <li id="currentLink"><a href="factorial.html">Factorial</a></li>
+                <li id="currentLink"><a href="file:///C:/Users/Jessica/Documents/GitHub/FCC-Projects/JavaScript/reversestring/reversestring.html">Reverse A String</a></li>
+                <li id="currentLink"><a href="#">Palindrome</a></li>
+                <li id="currentLink"><a href="#">Longest Word</a></li>
+                <li id="currentLink"><a href="#">Title Case a Sentence</a></li>
+                <li id="currentLink"><a href="#">Return Largest Number</a></li>
+                <li id="currentLink"><a href="#">Confirm the End</a></li>
+                <li id="currentLink"><a href="#">Repeat a String</a></li>
+                <li id="currentLink"><a href="#">Truncate a String</a></li>
+                <li id="currentLink"><a href="#">Chunky Monkey</a></li>
+                <li id="currentLink"><a href="#">Slasher Flick</a></li>
+                <li id="currentLink"><a href="#">Mutations</a></li>
+                <li id="currentLink"><a href="#">False Bouncer</a></li>
+                <li id="currentLink"><a href="#">Seek and Destroy</a></li>
+                <li id="currentLink"><a href="#">Where Do I Belong</a></li>
+                <li id="currentLink"> <a href="#">Ceasars Cipher</a></li>
+            </ul>
+        </div>
     </header>
-    <div>
-        <h3>What is a Factorial?</h3>
-        <p></p>
-    </div>
+    <div id="content">
+        <h1>Factorial Solver</h1>
+        <div>
 
-    <div>
-        <form id="form-factorial" accept-charset=utf-8>
-            <input id="input-number" type="text" name="number">
-            <button id="button">Factorial</button>
-        </form>
-    </div>
+            <h3>What is a Factorial?</h3>
+            <p>The factorial function (symbol: !) means to multiply a series of descending natural numbers.</p>
+        </div>
 
-    <div class="results">
-        <p id="factorial-input"></p>
-        <p id="work-out"></p>
-        <p id="factorial-answer"></p>
-        <p id="results-2"></p>
-    </div>
+        <div>
+            <h2>Enter in a number greater than 1 for the Factorial.</h2>
+            <form id="form-factorial" accept-charset=utf-8>
+                <input id="input-number" type="text" name="number">
+                <button id="button">Factorial</button>
+            </form>
+        </div>
+
+        <div class="results">
+            <p id="factorial-input"></p>
+            <p id="work-out"></p>
+            <p id="factorial-answer"></p>
+            <p id="results-2"></p>
+        </div>
 
 
      <footer>
         <p>This is part of <a href="https://www.freecodecamp.org/challenges/reverse-a-string">Free Code Camp</a> Intermidate Javascript Algorithms</p>
     </footer>
+</div>
 
     <script
               src="https://code.jquery.com/jquery-3.2.1.min.js"
