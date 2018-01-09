@@ -3,23 +3,23 @@
 <head>
 	<title>Wikipedia Viewer</title>
 	<link rel="stylesheet" type="text/css" href="wikipediaviewer.css">
+	<link href="https://fonts.googleapis.com/css?family=Titillium+Web|Ubuntu:700" rel="stylesheet">
 </head>
 <body>
 	<header><h1>Wikipedia Viewer</h1></header>
 	<div class="center">
-		<div>
-			<form id="form">
-				<input id="input-search" type="text" name="search">
-				<a id="search-click" href=""><img src="https://png.icons8.com/ios/51/f49d37/search-filled.png"></a>
-			</form>
-		</div>
+		<input type="text" id="input-search" />
+		<a id="search-click" href="#"><img src="https://png.icons8.com/ios/51/f49d37/search-filled.png"></a>
+		<!-- <input type="button" id="search-click" value="search" /> -->
+
 		<div>
 			<h3>Random Search</h3>
 			<a id="random-search" href="https://en.wikipedia.org/wiki/Special:Random" target="_blank"><img src="https://png.icons8.com/ios/51/d6d9ce/search-filled.png"></a>
 		</div>
 	</div>
 	<div>
-		 s
+		 
+		<ul id="wikipedia-title"></ul>
 		<ul id="wikipedia-links"></ul>
 	</div>
 
@@ -29,9 +29,11 @@
 
 	<!-- JQUERY -->
 
-     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+     <!-- <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script> 
      <script type="text/javascript" src="wikipediaviewer.js"></script> 
