@@ -1,78 +1,46 @@
 $(function(){
 
-freecodecamp();
-//liveChannel();*/
+	display();
 
-function url(userName){
-	$.getJSON('https://wind-bow.gomix.me/twitch-api/streams/'+ userName + '?callback=?', 
-	function(data) {
-  		//console.log(data);
-
-  		var url = data._links.self;
-  		console.log(url);
-
-  		var channel = data._links.channel;
-  		console.log(channel);
-
-  		var streamStatus = data.stream;
-  		console.log(streamStatus);
-
-  		status(streamStatus);
-
-  	});
-
-}
-
-
-//Status Function
-function status(streamReturn){
-	console.log(streamReturn);
-	//$('.status').html('');
-
-	if(streamReturn === null){
-		console.log('Offline');
-		$('.status').html('<h3> Offline</h3>');
-
-		$('.nostream').html('<p>No Live Stream</p>');
+	function display() {
+		var userName = ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas"];
+		for(var i = 0; i < userName.length; i++){
+			//console.log(i);
+			//console.log(channelName);
+	    	getChannelInfo(userName[i]);
+		}
 	}
-	else{
-		//console.log('Online');
-		var userNameReturn = streamReturn.channel.display_name;
-		var statusReturn = streamReturn.channel.status;
-		console.log(userNameReturn);
-		console.log(statusReturn);
 
-		$('.nostream').addClass('online');
-		$('.status').html('<h3> Online</h3>');
-		$('.online').append('<p>' + statusReturn + '</p>');
+	function getChannelInfo(channelName){
+		var url = "https://wind-bow.gomix.me/twitch-api/streams/" + channelName + "?callback=?";
+	    $.getJSON(url, function(channelInfo) {
+	    	console.log(url);
+	    	console.log(channelInfo);
+	    	console.log('channel: ' + channelName);
+
+	      	if (channelInfo.stream !== null) {
+	      		console.log('online');
+
+			    $('#channels').append("<a class='online' href='" + 
+			    channelInfo.stream.channel.url + "' target='_blank')'><h2>" + 
+			    channelInfo.stream.channel.display_name + "</h2><p>" + 
+			    channelInfo.stream.channel.game + ". " + 
+			    channelInfo.stream.channel.status + "</p></a><p class= 'status'>Online</p>");
+	        } 
+	        else if (channelInfo.stream === null) {
+
+				console.log('offline');
+
+	        	$('#channels').append("<h2><a href='" + channelInfo._links.channel + "' target='_blank')'>" + 
+	        		channelName + "</h2>");
+	        		$('#channels').append("<p class='status'>Offline</p>");
+			}
+			else{
+			    console.log('error finding channel');
+			}
+		})
+
+
 	}
-}
-
-
-function freecodecamp(){
-	url('freecodecamp');
-}
-
-$('#live-channel').click(function liveChannel(){
-
-	$.ajax({url: 'https://api.twitch.tv/kraken/streams',
-	type: 'GET', 
-	success: function(data) {
-  		console.log(data);
-
-  		/*var url = data._links.self;
-  		console.log(url);
-
-  		var channel = data._links.channel;
-  		console.log(channel);
-
-  		var streamStatus = data.stream;
-  		console.log(streamStatus);
-
-  		status(streamStatus);*/
-
-  	}
-  });
-});
 
 });
