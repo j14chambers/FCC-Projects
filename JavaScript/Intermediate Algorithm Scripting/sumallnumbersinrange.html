@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>javaScript</title>
+	<script type="text/javascript">
+		function sumAll(arr){
+			console.log(arr);
+
+
+			var maxValue = Math.max(...arr);
+			console.log('Max Value: ' + maxValue);
+
+			var minValue = Math.min(...arr);
+			console.log('Min Value: ' +minValue);
+
+			var arrSum = [];
+
+			for (var i = maxValue; i >= minValue; i--){
+				//console.log(i);
+				
+				arrSum[i] = i;
+				//console.log(arrSum[i]);
+
+
+			}
+			console.log(arrSum);
+			const reducer = (accumulator, currentValue) => accumulator + currentValue;
+			console.log(arrSum.reduce(reducer));
+			return arrSum.reduce(reducer);
+		}
+		sumAll([1,4]);
+		sumAll([4, 1]);
+
+		sumAll([5, 10]);
+		sumAll([10, 5]);
+
+	</script>
+</head>
+<body>
+    <h1>Sum All Numbers in a Range</h1>
+    <p>Open the Console to see the results.</p>
+    <h2>Program Decription</h2>
+    <p>Return the sum of the given numbers in the arr and all numbers between them.</p>
+    <h2>Examples</h2>
+
+    <footer>
+        <p>This is part of <a href="https://www.freecodecamp.org/challenges/reverse-a-string">Free Code Camp</a> Intermidate Javascript Scripting</p>
+    </footer>
+    <script
+              src="https://code.jquery.com/jquery-3.2.1.min.js"
+              integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+              crossorigin="anonymous">
+                  
+    </script>
+</body>
+</html>
