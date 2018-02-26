@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sum All Numbers in a Range</title>
+	<link rel="stylesheet" type="text/css" href="css/sumallnumbersinrange.css">
+	<link href="https://fonts.googleapis.com/css?family=Fjalla+One|Hind" rel="stylesheet"> 
+
+</head>
+<body>
+	<header>
+		<h1>Free Code Camp</h1>
+		<h1>Intermediate Algorithm Scripting</h1>
+	</header>
+    <h1 id="title">Diff Two Arrays</h1>
+    <h2>Program Decription</h2>
+    <p>Compare two arrays and return a new array with any items only found in one of the two given arrays, but not both. In other words, return the symmetric difference of the two arrays.</p>
+
+    <h3>Array 1</h3>
+    <p id="array-1"></p>
+    <h3>Array 2</h3>
+    <p id="array-2"></p>
+
+
+    <div class="results-div">
+    	<p id="results"></p>
+    </div>
+
+    <footer>
+        <p>This is part of <a href="https://www.freecodecamp.org/challenges/diff-two-arrays">Free Code Camp</a> Intermidate Javascript Scripting</p>
+    </footer>
+    <script
+              src="https://code.jquery.com/jquery-3.2.1.min.js"
+              integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+              crossorigin="anonymous">
+                  
+    </script>
+    <script type="text/javascript">
+
+		function diffArray(arr1, arr2) {
+
+			//Prints arr1 and arr2 to console and HTML body
+			console.log(arr1);
+			$('#array-1').html('<p>[' + arr1 + ']</p>');
+			console.log(arr2);
+			$('#array-2').html('<p>[' + arr2 + ']</p>');
+
+		  	var newArr = [];
+		  
+		  	function onlyInFirst(first, second) {
+
+		  	// Looping through an array to find elements that don't exist in another array
+		    	for (var i = 0; i < first.length; i++) {
+		      		if (second.indexOf(first[i]) === -1) {
+		        		// Pushing the elements unique to first to newArr
+		        		newArr.push(first[i]);
+		     		}
+		    	}
+		  	}
+		  
+		  	// This function switch arr1 with arr2, allowing to compare the indexes of each array for the different index with each array.
+		  	onlyInFirst(arr1, arr2);
+		  	onlyInFirst(arr2, arr1);
+
+		  	console.log(newArr);
+		  	$('#results').html('<p>The New Array is: <br>[' + newArr + ']</p>');
+		  
+		  	return newArr;
+		}
+
+		diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
+		diffArray(["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]);
+
+	</script>
+</body>
+</html>
