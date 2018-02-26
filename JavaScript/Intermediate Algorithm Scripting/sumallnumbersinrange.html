@@ -1,17 +1,73 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>javaScript</title>
-	<script type="text/javascript">
+	<title>Sum All Numbers in a Range</title>
+	<link rel="stylesheet" type="text/css" href="css/sumallnumbersinrange.css">
+	<link href="https://fonts.googleapis.com/css?family=Fjalla+One|Hind" rel="stylesheet"> 
+
+</head>
+<body>
+	<header>
+		<h1>Free Code Camp</h1>
+		<h1>Intermediate Algorithm Scripting</h1>
+	</header>
+    <h1 id="title">Sum All Numbers in a Range</h1>
+    <h2>Program Decription</h2>
+    <p>Return the sum of the given numbers in the arr and all numbers between them.</p>
+
+    <h3>Input two numbers</h3>
+
+    <input id="input-number1" type="text" name="number1">
+    <input id="input-number2" type="text" name="number2">
+    <button id="button">Submit</button>
+
+
+    <div class="results-div">
+    	<p id="results"></p>
+    	<p id="max-value"></p>
+    	<p id="sum"></p>
+    </div>
+
+    <footer>
+        <p>This is part of <a href="https://www.freecodecamp.org/challenges/sum-all-numbers-in-a-range">Free Code Camp</a> Intermidate Javascript Scripting</p>
+    </footer>
+    <script
+              src="https://code.jquery.com/jquery-3.2.1.min.js"
+              integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+              crossorigin="anonymous">
+                  
+    </script>
+    <script type="text/javascript">
+
+		$('#button').click(function (b){
+
+			var $inputNumber1 = document.getElementById('input-number1').value;
+			var $inputNumber2 = document.getElementById('input-number2').value;
+
+			//console.log($inputNumber1);
+			//console.log($inputNumber2);
+			var $inputArr = [];
+
+			$inputArr = [$inputNumber1, $inputNumber2];
+			console.log($inputArr);
+
+			$('#results').html('<h4> You Entered in the Array [' + $inputArr + ']</h4>');
+			sumAll($inputArr);
+
+		});
+
+
 		function sumAll(arr){
 			console.log(arr);
 
 
 			var maxValue = Math.max(...arr);
-			console.log('Max Value: ' + maxValue);
+			//console.log('Max Value: ' + maxValue);
+			$('#max-value').html('<p>Max Value: ' + maxValue + '</p>');
 
 			var minValue = Math.min(...arr);
-			console.log('Min Value: ' +minValue);
+			//console.log('Min Value: ' + minValue);
+			$('#max-value').append('<p>Min Value: ' + minValue + '</p>');
 
 			var arrSum = [];
 
@@ -24,33 +80,19 @@
 
 			}
 			console.log(arrSum);
+
 			const reducer = (accumulator, currentValue) => accumulator + currentValue;
 			console.log(arrSum.reduce(reducer));
+
+			$('#sum').html('<h4>The sum of the range: ' + arrSum.reduce(reducer) + '</h4>');
 			return arrSum.reduce(reducer);
 		}
-		sumAll([1,4]);
-		sumAll([4, 1]);
+		//sumAll([1,4]);
+		//sumAll([4, 1]);
 
-		sumAll([5, 10]);
-		sumAll([10, 5]);
+		//sumAll([5, 10]);
+		//sumAll([10, 5]);
 
 	</script>
-</head>
-<body>
-    <h1>Sum All Numbers in a Range</h1>
-    <p>Open the Console to see the results.</p>
-    <h2>Program Decription</h2>
-    <p>Return the sum of the given numbers in the arr and all numbers between them.</p>
-    <h2>Examples</h2>
-
-    <footer>
-        <p>This is part of <a href="https://www.freecodecamp.org/challenges/reverse-a-string">Free Code Camp</a> Intermidate Javascript Scripting</p>
-    </footer>
-    <script
-              src="https://code.jquery.com/jquery-3.2.1.min.js"
-              integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-              crossorigin="anonymous">
-                  
-    </script>
 </body>
 </html>
