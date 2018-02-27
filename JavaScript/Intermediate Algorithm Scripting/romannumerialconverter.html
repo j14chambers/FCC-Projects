@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Roman Numeral Converter</title>
+	<link rel="stylesheet" type="text/css" href="css/sumallnumbersinrange.css">
+	<link href="https://fonts.googleapis.com/css?family=Fjalla+One|Hind" rel="stylesheet"> 
+
+</head>
+<body>
+	<header>
+		<h1>Free Code Camp</h1>
+		<h1>Intermediate Algorithm Scripting</h1>
+	</header>
+    <h1 id="title">Roman Numeral Converter</h1>
+    <h2>Program Decription</h2>
+    <p>Return the sum of the given numbers in the arr and all numbers between them.</p>
+
+    <h3>Input two numbers</h3>
+
+    <input id="input-number1" type="text" name="number1">
+    <input id="input-number2" type="text" name="number2">
+    <button id="button">Submit</button>
+
+
+    <div class="results-div">
+    	<p id="results"></p>
+    	<p id="max-value"></p>
+    	<p id="sum"></p>
+    </div>
+
+    <footer>
+        <p>This is part of <a href="https://www.freecodecamp.org/challenges/sum-all-numbers-in-a-range">Free Code Camp</a> Intermidate Javascript Scripting</p>
+    </footer>
+    <script
+              src="https://code.jquery.com/jquery-3.2.1.min.js"
+              integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+              crossorigin="anonymous">
+                  
+    </script>
+    <script type="text/javascript">
+
+		$('#button').click(function (b){
+
+			var $inputNumber1 = document.getElementById('input-number1').value;
+			var $inputNumber2 = document.getElementById('input-number2').value;
+
+			//console.log($inputNumber1);
+			//console.log($inputNumber2);
+			var $inputArr = [];
+
+			$inputArr = [$inputNumber1, $inputNumber2];
+			console.log($inputArr);
+
+			$('#results').html('<h4> You Entered in the Array [' + $inputArr + ']</h4>');
+			sumAll($inputArr);
+
+		});
+
+		var letter = '';
+
+		function convertToRoman(number){
+			console.log(number);
+
+			// Turns number into String and splits into single digits
+			var stringNumber = number.toString().split('');
+			console.log(stringNumber);
+			var numberOfDigits = stringNumber.length;
+			console.log('The number of Digits: ' + numberOfDigits);
+
+			for (var i = stringNumber.length - 1; i >= 0; i--) {
+
+				console.log('stringNumber[' + i + ']: ' + stringNumber[i]);
+				var newStringNumber = stringNumber[i];
+
+				//For Numbers less than 10
+				if (i === numberOfDigits - 1){
+					console.log('This the ones place.');
+					newStringNumber = stringNumber[i];
+					//console.log(newStringNumber);
+
+					if ( newStringNumber <= 3){
+						letter = 'I';
+						var ones = letter.repeat(stringNumber[i]);
+						console.log(ones);
+					}
+
+					else if (newStringNumber === 4){
+						letter = 'IV';
+						var ones = letter;
+						console.log(ones);
+
+					}
+
+					else if (newStringNumber === 9){
+						letter = 'IX';
+						var ones = letter;
+						console.log(ones);
+					}
+					else if (newStringNumber >= 5 && newStringNumber != 9){
+						letter = 'I';
+						var ones = 'V' + letter.repeat(stringNumber[i] - 5);
+						console.log(ones);
+					}
+
+				}
+
+				//For numbers greater than 10	
+				else if(i === numberOfDigits - 2){
+					console.log('This the tens place.');
+					newStringNumber = stringNumber[i] * 10;
+					//console.log(newStringNumber);
+
+					letter = 'X';
+
+					if (newStringNumber < 50 && newStringNumber != 40) {
+						var tens = letter.repeat(stringNumber[i]);
+						console.log(tens);
+					}
+					else if (newStringNumber === 40) {
+						letter = 'XL';
+						var tens = letter;
+						console.log(tens);
+					}
+					else if (newStringNumber === 90) {
+						letter = 'XC';
+						var tens = letter;
+						console.log(tens);
+					}
+
+					else if (newStringNumber >= 50 && newStringNumber != 90) {
+						var tens = 'L' + letter.repeat(stringNumber[i] - 5);
+						console.log(tens);
+					}
+
+
+				}
+
+				//For numbers greater than 100	
+				else if(i === numberOfDigits - 3){
+					console.log('This the hundreds place.');
+					newStringNumber = stringNumber[i] * 100;
+					//console.log(newStringNumber);
+
+					letter = 'C';
+
+					if (newStringNumber <= 100 && newStringNumber != 400) {
+						var hundreds = letter.repeat(stringNumber[i]);
+						console.log(hundreds);
+					}
+					else if (newStringNumber >= 500 && newStringNumber != 900) {
+						var hundreds = 'D' + letter.repeat(stringNumber[i] - 5);
+						console.log(hundreds);
+					}
+					else if (newStringNumber === 400) {
+						letter = 'CD';
+						var hundreds = letter;
+						console.log(hundreds);
+					}
+					else if (newStringNumber === 900) {
+						letter = 'CM';
+						var hundreds = letter;
+						console.log(hundreds);
+					}
+
+				}
+
+				//For numbers greater than 1000	and less than 5000
+				else if(i === numberOfDigits - 4){
+					console.log('This the thousands place.');
+					newStringNumber = stringNumber[i] * 1000;
+					//console.log(newStringNumber);
+
+					letter = 'M';
+
+					if (newStringNumber >= 1000 && newStringNumber < 5000) {
+						var thousands = letter.repeat(stringNumber[i]);
+						console.log(thousands);
+					}
+
+					else if (newStringNumber >= 5000) {
+						console.log('Number too Big to Convert.');
+					}
+
+				}
+
+				//Run RomanLetter function.
+				RomanLetter(ones, tens, hundreds, thousands);
+			}
+
+			//Joins all Roman Numerals Letters together
+			function RomanLetter(onesPlace, tensPlace, hundredsPlace, thousandsPlace){
+				var wholeNumber = [thousandsPlace, hundredsPlace, tensPlace, onesPlace];
+				var newromanNumber = wholeNumber.reverse().join('');
+				romanNumeral = wholeNumber.join('');
+
+				console.log(romanNumeral);
+				console.log(newromanNumber);
+
+				return romanNumeral;
+
+			}
+
+
+			//console.log('Max Value: ' + maxValue);
+			//$('#max-value').html('<p>Max Value: ' + number + '</p>');
+
+			//console.log('Min Value: ' + minValue);
+			//$('#max-value').append('<p>Min Value: ' + minValue + '</p>');
+
+
+
+
+			//$('#sum').html('<h4>The sum of the range: ' + arrSum.reduce(reducer) + '</h4>');
+			//return arrSum.reduce(reducer);
+		}
+
+		//convertToRoman(3426);
+		//convertToRoman(5);
+		convertToRoman(1108);
+		convertToRoman(236);
+		//convertToRoman(10);
+		//convertToRoman(41);
+		//convertToRoman(1592);
+
+
+	</script>
+</body>
+</html>
