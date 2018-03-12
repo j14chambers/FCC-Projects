@@ -13,23 +13,21 @@
 	</header>
     <h1 id="title">Roman Numeral Converter</h1>
     <h2>Program Decription</h2>
-    <p>Return the sum of the given numbers in the arr and all numbers between them.</p>
+    <p>Return the Roman Numeral of the given number.</p>
 
-    <h3>Input two numbers</h3>
+    <h3>Input A Number</h3>
 
     <input id="input-number1" type="text" name="number1">
-    <input id="input-number2" type="text" name="number2">
-    <button id="button">Submit</button>
+    <button id="button">Convert</button>
 
 
     <div class="results-div">
     	<p id="results"></p>
-    	<p id="max-value"></p>
-    	<p id="sum"></p>
+    	<p id="romanNumeral-results"></p>
     </div>
 
     <footer>
-        <p>This is part of <a href="https://www.freecodecamp.org/challenges/sum-all-numbers-in-a-range">Free Code Camp</a> Intermidate Javascript Scripting</p>
+        <p>This is part of <a href="https://www.freecodecamp.org/challenges/roman-numeral-converter">Free Code Camp</a> Intermidate Javascript Scripting</p>
     </footer>
     <script
               src="https://code.jquery.com/jquery-3.2.1.min.js"
@@ -42,17 +40,15 @@
 		$('#button').click(function (b){
 
 			var $inputNumber1 = document.getElementById('input-number1').value;
-			var $inputNumber2 = document.getElementById('input-number2').value;
 
-			//console.log($inputNumber1);
-			//console.log($inputNumber2);
-			var $inputArr = [];
+			console.log($inputNumber1);
+			var $inputValue = [];
 
-			$inputArr = [$inputNumber1, $inputNumber2];
-			console.log($inputArr);
+			$inputValue = [$inputNumber1];
+			console.log($inputValue);
 
-			$('#results').html('<h4> You Entered in the Array [' + $inputArr + ']</h4>');
-			sumAll($inputArr);
+			$('#results').html('<h4> You Entered in ' + $inputValue + '</h4>');
+			convertToRoman($inputValue);
 
 		});
 
@@ -84,14 +80,13 @@
 						console.log(ones);
 					}
 
-					else if (newStringNumber === 4){
+					else if (newStringNumber == 4){
 						letter = 'IV';
 						var ones = letter;
 						console.log(ones);
-
 					}
 
-					else if (newStringNumber === 9){
+					else if (newStringNumber == 9){
 						letter = 'IX';
 						var ones = letter;
 						console.log(ones);
@@ -180,49 +175,33 @@
 					else if (newStringNumber >= 5000) {
 						console.log('Number too Big to Convert.');
 					}
-
 				}
-
-				//Run RomanLetter function.
-				RomanLetter(ones, tens, hundreds, thousands);
 			}
+			//Run RomanLetter Function.
+			RomanLetter(ones, tens, hundreds, thousands);
 
 			//Joins all Roman Numerals Letters together
 			function RomanLetter(onesPlace, tensPlace, hundredsPlace, thousandsPlace){
 				var wholeNumber = [thousandsPlace, hundredsPlace, tensPlace, onesPlace];
-				var newromanNumber = wholeNumber.reverse().join('');
-				romanNumeral = wholeNumber.join('');
+				console.log(wholeNumber);
+				console.log(wholeNumber.join(''));
+				var romanNumeral = wholeNumber.join('');
 
-				console.log(romanNumeral);
-				console.log(newromanNumber);
+				console.log('Roman Numeral: ' + romanNumeral);
+				$('#romanNumeral-results').html('<p>Roman Numeral: ' + romanNumeral + '</p>');
 
-				return romanNumeral;
+				return wholeNumber.join('');
 
 			}
-
-
-			//console.log('Max Value: ' + maxValue);
-			//$('#max-value').html('<p>Max Value: ' + number + '</p>');
-
-			//console.log('Min Value: ' + minValue);
-			//$('#max-value').append('<p>Min Value: ' + minValue + '</p>');
-
-
 
 
 			//$('#sum').html('<h4>The sum of the range: ' + arrSum.reduce(reducer) + '</h4>');
 			//return arrSum.reduce(reducer);
 		}
 
-		//convertToRoman(3426);
-		//convertToRoman(5);
-		convertToRoman(1108);
-		convertToRoman(236);
+		//convertToRoman(9);
+		//convertToRoman(4);
 		//convertToRoman(10);
-		//convertToRoman(41);
-		//convertToRoman(1592);
-
-
 	</script>
 </body>
 </html>

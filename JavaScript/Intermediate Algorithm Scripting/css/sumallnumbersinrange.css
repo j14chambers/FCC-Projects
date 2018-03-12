@@ -25,12 +25,12 @@ h1{
 	padding: 20px;
 }
 input{
-	padding: 10px 0 inherit 0;
+	padding: 10px 10px 10px 0;
 	width: 90px;
 	text-align: center;
 	margin: 10px;
-	border-radius: 10px;
-	font-size: 20px;
+	border-radius: 7px;
+	font-size: 25px;
 	border: #f6ae2d solid 2px;
 }
 #button{
@@ -47,8 +47,11 @@ input{
 	background-color: #1e3888;
 	color: white;
 }
+.results-div p{
+	font-size: 30px;
+}
 h4{
-	font-size: 25px;
+	font-size: 30px;
 }
 a{
 	color: currentColor;
