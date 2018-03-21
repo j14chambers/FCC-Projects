@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Search and Replace</title>
+	<link rel="stylesheet" type="text/css" href="css/sumallnumbersinrange.css">
+	<link href="https://fonts.googleapis.com/css?family=Fjalla+One|Hind" rel="stylesheet"> 
+
+</head>
+<body id="search-and-replace">
+	<header>
+		<h1>Free Code Camp</h1>
+		<h1>Intermediate Algorithm Scripting</h1>
+	</header>
+    <h1 id="title">Search and Replace</h1>
+    <h2>Program Decription</h2>
+    <p>Perform a search and replace on the sentence using the arguments provided and return the new sentence.</p>
+    
+    <h3>Enter a statement.</h3>
+    <textarea id="input-str" type="text" name="str" rows="1"></textarea>
+    <br>
+    Find a word to change.
+    <input id="input-before" type="text" name="before-word">
+    Type in a new word.
+    <input id="input-after" type="text" name="after-word">
+    <br>
+    <button id="button">Submit</button>
+
+
+    <div class="results-div">
+    	<p id="str"></p>
+    	<p id="change-word"></p>
+    	<p id="results"></p>
+    	
+    </div>
+
+    <footer>
+        <p>This is part of <a href="https://www.freecodecamp.org/challenges/search-and-replace">Free Code Camp</a> Intermidate Javascript Scripting</p>
+    </footer>
+    <script
+              src="https://code.jquery.com/jquery-3.2.1.min.js"
+              integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+              crossorigin="anonymous">
+                  
+    </script>
+    <script type="text/javascript">
+    	$('#button').click(function (b){
+
+			var $inputstr = document.getElementById('input-str').value;
+			var $inputbefore = document.getElementById('input-before').value;
+			var $inputafter = document.getElementById('input-after').value;
+
+			var $statementStr = [];
+
+			$statementStr = [$inputstr, $inputbefore, $inputafter];
+
+			myReplace($inputstr, $inputbefore, $inputafter);
+
+		});
+
+		function myReplace(str, before, after) {
+
+			//Prints str, after and before strings to console and HTML body
+			console.log(str);
+			$('#str').html('<p>' + str + '</p>');
+			console.log(before);
+			console.log(after);
+			$('#change-word').append('<p>Before: ' + before + '</p>');
+			$('#change-word').append('<p>After: ' + after + '</p>');
+
+			//Checks if the first letter in 'before' is upper case
+			if(before[0] === before[0].toUpperCase()){
+				console.log(after[0].toUpperCase() + after.substr(1));
+				//Replaces the 'before' with 'after' with the first letter upper case
+				var strReplace = str.replace(before, after[0].toUpperCase() + after.substr(1) );
+			}
+			else{
+				var strReplace = str.replace(before, after);
+			}
+			//prints the results
+		  	console.log(strReplace);
+		  	$('#results').html('<p>The new sentence is: <br>' + strReplace + '</p>');
+		  
+		  	return strReplace;
+		}
+
+		/*myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
+		myReplace("He is Sleeping on the couch", "Sleeping", "sitting");
+		myReplace("His name is Tom", "Tom", "john");
+		myReplace("Let us get back to more Coding", "Coding", "algorithms");*/
+
+	</script>
+</body>
+</html>

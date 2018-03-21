@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sum All Numbers in a Range</title>
+	<link rel="stylesheet" type="text/css" href="css/sumallnumbersinrange.css">
+	<link href="https://fonts.googleapis.com/css?family=Fjalla+One|Hind" rel="stylesheet"> 
+
+</head>
+<body>
+	<header>
+		<h1>Free Code Camp</h1>
+		<h1>Intermediate Algorithm Scripting</h1>
+	</header>
+    <h1 id="title">Diff Two Arrays</h1>
+    <h2>Program Decription</h2>
+    <p>Compare two arrays and return a new array with any items only found in one of the two given arrays, but not both. In other words, return the symmetric difference of the two arrays.</p>
+
+    <h3>Array 1</h3>
+    <p id="array-1"></p>
+    <h3>Array 2</h3>
+    <p id="array-2"></p>
+
+
+    <div class="results-div">
+    	<p id="results"></p>
+    </div>
+
+    <footer>
+        <p>This is part of <a href="https://www.freecodecamp.org/challenges/diff-two-arrays">Free Code Camp</a> Intermidate Javascript Scripting</p>
+    </footer>
+    <script
+              src="https://code.jquery.com/jquery-3.2.1.min.js"
+              integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+              crossorigin="anonymous">
+                  
+    </script>
+    <script type="text/javascript">
+
+		function whatIsInAName(collection, source) {
+			//Prints collection and source to console and HTML body
+			console.log(collection);
+			//$('#array-1').html('<p>[' + arr1 + ']</p>');
+			console.log(source);
+			//$('#array-2').html('<p>[' + arr2 + ']</p>');
+
+
+			//console.log(Object.keys(source));
+			//console.log(Object.keys(collection[0]));
+
+			//console.log(Object.getOwnPropertyNames(source));
+			//console.log(Object.getOwnPropertyNames(collection[2]));
+			//var keys = Object.keys(collection);
+			/*var keys = Object.keys(source);
+			var objectCollection = [];
+
+			var getKeys = function(objects){
+				var keys = [];
+				for(var key in objects){
+					keys.push(key);
+				}
+			}
+			console.log(keys);
+
+			for (var key in collection) {
+    			if (collection.hasOwnProperty(key)) {
+        			objectCollection.push(key);
+   				 }
+			}*/
+
+			var resultsArray = [];
+			var arrayPush = [];
+
+			var sourceArray = [];
+			var sourceValue = [];
+
+			var collectionArr = [];
+			var collectionValue = [];
+
+			Object.getOwnPropertyNames(source).forEach(
+				function (val, idx, array){
+					console.log(val + ' -> ' + source[val]);
+					sourceArray.push(source[val]);
+					sourceValue.push(val);
+
+					for (var i = collection.length - 1; i >= 0; i--) {
+						console.log(collection[i]);
+
+
+						Object.getOwnPropertyNames(collection[i]).forEach(
+							function(value, idx, collectionArray){
+								console.log(value + ' -> ' + collection[i][value]);
+
+
+								if (Object.getOwnPropertyNames(collection[i]).indexOf(sourceValue) === -1) {
+									console.log(Object.getOwnPropertyNames(collection[i]));
+									console.log(sourceValue);
+									console.log(Object.getOwnPropertyNames(collection[i]).indexOf(sourceValue));
+									console.log(true);
+								}
+
+								collectionArr.push(collection[i][value]);
+								collectionValue.push(value);
+
+								if(collection[i][value] === source[val] && value === val){
+									sourceIsFoundInCollection();
+
+									//resultsArray.push(collection[i]);
+
+								}
+								//console.log(collectionArray);
+
+								function sourceIsFoundInCollection(){
+									console.log(collectionArray.indexOf(sourceArray));
+									console.log(collectionArray);
+									console.log(sourceValue);
+
+
+									if (collectionArray.indexOf(sourceValue) === -1 && value.indexOf(sourceArray === -1)) {
+										console.log(sourceArray);
+										console.log(collectionValue);
+										console.log(true);
+										resultsArray.push(collection[i]);
+									}
+								}
+							}
+						);
+					}
+				}
+			);
+
+			console.log(sourceArray);
+			console.log(resultsArray);
+
+		  	/*var newArr = [];
+		  
+		  	function onlyInFirst(first, second) {
+
+		  	// Looping through an array to find elements that don't exist in another array
+		    	for (var i = 0; i < first.length; i++) {
+		      		if (second.indexOf(first[i]) === -1) {
+		        		// Pushing the elements unique to first to newArr
+		        		newArr.push(first[i]);
+		     		}
+		    	}
+		  	}
+		  
+		  	// This function switch arr1 with arr2, allowing to compare the indexes of each array for the different index with each array.
+		  	onlyInFirst(arr1, arr2);
+		  	onlyInFirst(arr2, arr1);
+
+		  	console.log(newArr);
+		  	$('#results').html('<p>The New Array is: <br>[' + newArr + ']</p>');
+		  
+		  	//return newArr;
+		  	*/
+		}
+
+	whatIsInAName([{ first: "Romeo", last: "Montague" }, 
+				{ first: "Mercutio", last: null }, 
+				{ first: "Tybalt", last: "Capulet" }],
+		 		{ last: "Capulet" });
+
+	/*whatIsInAName([{ "a": 1, "b": 2 }, 
+					{ "a": 1 }, 
+					{ "a": 1, "b": 2, "c": 2 }],
+					{ "a": 1, "b": 2 });*/
+
+	/*whatIsInAName([{ "a": 1 }, { "a": 1 }, { "a": 1, "b": 2 }], { "a": 1 });*/
+
+	whatIsInAName([{ "a": 1, "b": 2 }, 
+					{ "a": 1 }, 
+					{ "a": 1, "b": 2, "c": 2 }], 
+					{ "a": 1, "c": 2 });
+
+	</script>
+</body>
+</html>
