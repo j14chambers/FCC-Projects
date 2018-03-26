@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DNA Pairing</title>
+	<link rel="stylesheet" type="text/css" href="css/sumallnumbersinrange.css">
+	<link href="https://fonts.googleapis.com/css?family=Fjalla+One|Hind" rel="stylesheet"> 
+
+</head>
+<body id="dna-pairing">
+	<header>
+		<h1>Free Code Camp</h1>
+		<h1>Intermediate Algorithm Scripting</h1>
+	</header>
+    <h1 id="title">DNA Pairing</h1>
+    <h2>Program Decription</h2>
+    <p>The DNA strand is missing the pairing element. Take each character, get its pair, and return the results as a 2d array.</p>
+    <p>Return the provided character as the first element in each array.
+    	<br>
+    	For example, for the input GCG, return [["G", "C"], ["C","G"],["G", "C"]].
+    	<br>
+    	The character and its pair are paired up in an array, and all the arrays are grouped into one encapsulating array.
+    </p>
+
+    <footer>
+        <p>This is part of <a href="https://www.freecodecamp.org/challenges/dna-pairing">Free Code Camp</a> Intermidate Javascript Scripting</p>
+    </footer>
+    <script
+              src="https://code.jquery.com/jquery-3.2.1.min.js"
+              integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+              crossorigin="anonymous">
+                  
+    </script>
+    <script type="text/javascript">
+
+		function pairElement(str) {
+
+			//Prints str to console
+			console.log(str);
+
+			var testpush = [];
+			var pushPair = [];
+			var dnaPair = [];
+
+			for(var i = 0; str.length > i; i++){
+				console.log(str[i]);
+
+
+				if( str[i] === 'G'){
+					var pair = [str[i]]
+					pair.push('C');
+					console.log(pair);
+					dnaPair.push(pair);
+
+				}
+				else if(str[i] === 'C'){
+					var pair = [str[i]]
+					pair.push('G');
+					console.log(pair);
+
+					dnaPair.push(pair);
+
+				}else if(str[i] === 'A'){
+					var pair = [str[i]]
+					pair.push('T');
+					console.log(pair);
+
+					dnaPair.push(pair);
+
+				}else if(str[i] === 'T'){
+					var pair = [str[i]]
+					pair.push('A');
+					console.log(pair);
+
+					dnaPair.push(pair);
+				}
+			}
+			console.log(dnaPair);
+		}
+		pairElement("GCG");			// GC CG GC
+		pairElement("TTGAG");
+
+	</script>
+</body>
+</html>
