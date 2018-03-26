@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pig Latin</title>
+	<link rel="stylesheet" type="text/css" href="css/sumallnumbersinrange.css">
+	<link href="https://fonts.googleapis.com/css?family=Fjalla+One|Hind" rel="stylesheet"> 
+
+</head>
+<body id="pig-latin">
+	<header>
+		<h1>Free Code Camp</h1>
+		<h1>Intermediate Algorithm Scripting</h1>
+	</header>
+    <h1 id="title">Pig Latin</h1>
+    <h2>Program Decription</h2>
+    <p>Translate the given word to pig Latin.</p>
+    <p>Pig Latin takes the first consonant (or consonant cluster) of an English word, moves it to the end of the word and suffixes an "ay". If a word begins with a vowel you just add "way" to the end.</p>
+    
+    <h3>Enter in a word.</h3>
+    <input id="input-str" type="text" name="before-str">
+    <button id="button">Submit</button>
+
+    <div class="results-div">
+    	<p id="str"></p>
+    	<p id="translation"></p>
+    </div>
+
+    <footer>
+        <p>This is part of <a href="https://www.freecodecamp.org/challenges/pig-latin">Free Code Camp</a> Intermidate Javascript Scripting</p>
+    </footer>
+    <script
+              src="https://code.jquery.com/jquery-3.2.1.min.js"
+              integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+              crossorigin="anonymous">
+                  
+    </script>
+    <script type="text/javascript">
+    	$('#button').click(function (b){
+
+			var $inputstr = document.getElementById('input-str').value;
+			translatePigLatin($inputstr);
+
+		});
+
+		function translatePigLatin(str) {
+
+			//Prints str, after and before strings to console and HTML body
+			console.log(str);
+
+			var consonant = ['b','c','d','f','g','h','j','k','l','z','x','v','n','m','q','w','r','t','y','p','s'];
+			var i = 0;
+
+			//checks for consonant as first letter
+			if(consonant.indexOf(str[i]) !== -1){
+				//check for consonant cluster
+				for (var i = 0; consonant.indexOf(str[i]) !== -1; i++) {
+					console.log(str[i]);
+					var letter = str[i];
+				}
+				//consonat at beginning of str
+				var strConsonant = str.substr(0,i);
+				console.log(strConsonant);
+
+				//this where the vowel start in the str
+				var letterRemove = str.substr(i);
+				console.log(letterRemove);
+
+				var piglatin = letterRemove + strConsonant + 'ay' ;
+			}
+			//if a str starts with vowel
+			else if(consonant.indexOf(str[i]) === -1){
+				var piglatin = str + 'way';
+			}
+
+			console.log(piglatin);
+
+			$('#str').html('<p>' + str + '</p>');
+
+			//prints the results
+		  	$('#translation').html('<p>Pig Latin translation: <br>' + piglatin + '</p>');
+		  
+
+		}
+		/*translatePigLatin("consonant");
+		translatePigLatin("algorithm");
+		translatePigLatin("glove");*/
+
+	</script>
+</body>
+</html>
