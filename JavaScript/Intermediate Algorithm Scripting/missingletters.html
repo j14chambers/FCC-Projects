@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Missing Letters</title>
+	<link rel="stylesheet" type="text/css" href="css/sumallnumbersinrange.css">
+	<link href="https://fonts.googleapis.com/css?family=Fjalla+One|Hind" rel="stylesheet"> 
+
+</head>
+<body id="missing-letters">
+	<header>
+		<h1>Free Code Camp</h1>
+		<h1>Intermediate Algorithm Scripting</h1>
+	</header>
+    <h1 id="title">Missing Letters</h1>
+    <h2>Program Decription</h2>
+    <p>TFind the missing letter in the passed letter range and return it. If all letters are present in the range, return undefined.</p>
+    </p>
+
+    <footer>
+        <p>This is part of <a href="https://www.freecodecamp.org/challenges/missing-letters">Free Code Camp</a> Intermidate Javascript Scripting</p>
+    </footer>
+    <script
+              src="https://code.jquery.com/jquery-3.2.1.min.js"
+              integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+              crossorigin="anonymous">
+                  
+    </script>
+    <script type="text/javascript">
+
+    	function genCharArray(charA, charZ) {
+    		aphlabetArray = [];
+		    i = charA.charCodeAt(0), j = charZ.charCodeAt(0);
+
+		    for (; i <= j; ++i) {
+		        aphlabetArray.push(String.fromCharCode(i));
+		    }
+
+		    return aphlabetArray;
+		}
+
+		function fearNotLetter(str) {
+
+			//Prints str to console
+			console.log(str);
+
+			var startLetter = str[0];
+			var endLetter = str.substr(-1, 1);
+
+			genCharArray(startLetter,endLetter);
+			var strArray = [];
+
+			console.log(aphlabetArray);
+	
+			for(var i = 0; str.length > i; i++){
+				strArray.push(str[i]);
+			}
+
+			console.log(strArray);
+
+			for (var i = 0; strArray.indexOf(aphlabetArray[i]) !== -1; i++) {
+				letterNotFound =aphlabetArray[i + 1];
+				console.log(aphlabetArray[i + 1]);
+				console.log(letterNotFound);
+			}
+
+			if(aphlabetArray[i + 1] === undefined){
+				return undefined;
+			}
+			else{
+				return letterNotFound;
+			}
+		}
+
+		fearNotLetter("abcdefghjklmno")
+		fearNotLetter("abce")
+		fearNotLetter("abc")
+
+	</script>
+</body>
+</html>
