@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Boo Who</title>
+	<link rel="stylesheet" type="text/css" href="css/sumallnumbersinrange.css">
+	<link href="https://fonts.googleapis.com/css?family=Fjalla+One|Hind" rel="stylesheet"> 
+
+</head>
+<body id="boo-who">
+	<header>
+		<h1>Free Code Camp</h1>
+		<h1>Intermediate Algorithm Scripting</h1>
+	</header>
+    <h1 id="title">Boo Who</h1>
+    <h2>Program Decription</h2>
+    <p>Check if a value is classified as a boolean primitive. Return true or false. Boolean primitives are true and false.</p>
+
+    <footer>
+        <p>This is part of <a href="https://www.freecodecamp.org/challenges/boo-who">Free Code Camp</a> Intermidate Javascript Scripting</p>
+    </footer>
+    <script
+              src="https://code.jquery.com/jquery-3.2.1.min.js"
+              integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+              crossorigin="anonymous">
+                  
+    </script>
+    <script type="text/javascript">
+
+    	function booWho(bool) {
+		  	// What is the new fad diet for ghost developers? The Boolean.
+		  	console.log(bool);
+		  	if (bool === true || bool === false){
+		  		console.log(true);
+		  		return true;
+		  	}
+		  	else{
+		  		console.log(false);
+		  		return false;
+		  	}
+		  	return bool;
+		}
+
+		booWho(null);
+		booWho(false);
+		booWho(true);
+		booWho([].slice);
+		booWho("a");
+		booWho('true');
+
+
+	</script>
+</body>
+</html>
