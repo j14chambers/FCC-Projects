@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Convert HTML Entiites</title>
+	<link rel="stylesheet" type="text/css" href="css/sumallnumbersinrange.css">
+	<link href="https://fonts.googleapis.com/css?family=Fjalla+One|Hind" rel="stylesheet"> 
+
+</head>
+<body>
+	<header>
+		<h1>Free Code Camp</h1>
+		<h1>Intermediate Algorithm Scripting</h1>
+	</header>
+    <h1 id="title">Convert HTML Entities</h1>
+    <h2>Program Decription</h2>
+    <p>Convert the characters &, <, >, " (double quote), and ' (apostrophe), in a string to their corresponding HTML entities.</p>
+    <footer>
+        <p>This is part of <a href="https://www.freecodecamp.org/challenges/convert-html-entities">Free Code Camp</a> Intermidate Javascript Scripting</p>
+    </footer>
+    <script
+              src="https://code.jquery.com/jquery-3.2.1.min.js"
+              integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+              crossorigin="anonymous">
+                  
+    </script>
+    <script type="text/javascript">
+
+		function convertHTML(str){
+			console.log(str);
+
+			var i = 0;
+			conversion = [];
+			while(i !== str.length){
+					//console.log(str[i]);
+					entity(str[i]);
+				i++;
+
+			}
+			console.log(finalStr);
+			return finalStr;
+		}
+
+		function entity(strReplace){
+
+    		switch (strReplace){
+    			case '&':
+    			var htmlEntities ='&amp;';
+    			console.log(htmlEntities);
+    			break;
+    			case '<':
+    			htmlEntities ='&lt;';
+    			console.log(htmlEntities);
+    			break;
+    			case '>':
+    			htmlEntities ='&gt;';
+    			console.log(htmlEntities);
+    			break;
+    			case '"':
+    			htmlEntities ='&quot;';
+    			console.log(htmlEntities);
+    			break;
+    			case "'":
+    			htmlEntities ='&apos;';
+    			console.log(htmlEntities);
+    			break;
+    			default:
+    		}
+    		replace = strReplace.replace(/[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]/, htmlEntities);
+    		
+    		conversion.push(replace);
+    		//console.log(conversion.join(''));
+    		getHTMLEntity(conversion);
+    	}
+    
+		function getHTMLEntity(newStr){
+			finalStr = newStr.join('');
+			//console.log(finalStr);
+		}
+
+		convertHTML("Dolce & Gabbana");
+		convertHTML("Hamburgers < Pizza < Tacos");
+		convertHTML("Sixty > twelve");
+		convertHTML("<>");
+		convertHTML('Stuff in "quotation marks"');
+
+	</script>
+</body>
+</html>
