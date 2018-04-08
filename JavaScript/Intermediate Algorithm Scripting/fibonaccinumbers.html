@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sum All Odd Fibonacci Numbers</title>
+	<link rel="stylesheet" type="text/css" href="css/sumallnumbersinrange.css">
+	<link href="https://fonts.googleapis.com/css?family=Fjalla+One|Hind" rel="stylesheet"> 
+
+</head>
+<body id="fibonacci-numbers">
+	<header>
+		<h1>Free Code Camp</h1>
+		<h1>Intermediate Algorithm Scripting</h1>
+	</header>
+    <h1 id="title">Sum All Odd Fibonacci Numbers</h1>
+    <h2>Program Decription</h2>
+    <p>Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes.</p>
+    
+    <h3>Enter a statement. Add dashes (-) and upper-case the first letter in some of the words with no spaces.</h3>
+    <textarea id="input-str" type="text" name="str" rows="1"></textarea>
+    <br>
+    <br>
+    <button id="button">Submit</button>
+
+
+    <div class="results-div">
+    	<p id="str"></p>
+    	<p id="change-word"></p>
+    	<p id="results"></p>
+    	
+    </div>
+
+    <footer>
+        <p>This is part of <a href="https://www.freecodecamp.org/challenges/spinal-tap-case">Free Code Camp</a> Intermidate Javascript Scripting</p>
+    </footer>
+    <script
+              src="https://code.jquery.com/jquery-3.2.1.min.js"
+              integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+              crossorigin="anonymous">
+                  
+    </script>
+    <script type="text/javascript">
+    	$('#button').click(function (b){
+			var $inputstr = document.getElementById('input-str').value;
+			spinalCase($inputstr);
+		});
+
+
+		function sumFibs(num) {
+			console.log(num);
+
+			currentNum = 0;
+			nextNum = 1;
+			var numSum = 0;
+
+
+			while(nextNum <= num){
+				
+				if(nextNum % 2 !== 0){
+					numSum += nextNum;
+				}
+
+				nextNum += currentNum;
+				console.log('nextNum = ' + nextNum)
+				currentNum = nextNum - currentNum;
+				console.log('currentNum = ' + currentNum);
+			}
+			console.log(numSum);
+
+		}
+
+		sumFibs(10);
+
+	</script>
+</body>
+</html>
