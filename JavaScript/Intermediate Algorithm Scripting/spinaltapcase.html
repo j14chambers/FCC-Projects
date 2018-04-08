@@ -15,7 +15,7 @@
     <h2>Program Decription</h2>
     <p>Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes.</p>
     
-    <h3>Enter a statement.</h3>
+    <h3>Enter a statement. Add dashes (-) and upper-case the first letter in some of the words with no spaces.</h3>
     <textarea id="input-str" type="text" name="str" rows="1"></textarea>
     <br>
     <br>
@@ -40,21 +40,13 @@
     </script>
     <script type="text/javascript">
     	$('#button').click(function (b){
-
 			var $inputstr = document.getElementById('input-str').value;
-			var $inputbefore = document.getElementById('input-before').value;
-			var $inputafter = document.getElementById('input-after').value;
-
-			var $statementStr = [];
-
-			$statementStr = [$inputstr, $inputbefore, $inputafter];
-
-			myReplace($inputstr, $inputbefore, $inputafter);
-
+			spinalCase($inputstr);
 		});
 
 		function spinalCase(str) {
 			console.log(str);
+			$('#str').html(str);
 
 			var regex = /\s+|_+/g;
 
@@ -64,15 +56,17 @@
 			var spinalCase = newstr.replace(regex, '-').toLowerCase();
 
 			console.log(spinalCase);
+			$('#results').html(spinalCase);
 
   			return spinalCase;
 		}
-		spinalCase('This Is Spinal Tap');
+
+		/*spinalCase('This Is Spinal Tap');
 		spinalCase("The_Andy_Griffith_Show");
 		spinalCase("Teletubbies say Eh-oh");
 
 		spinalCase("thisIsSpinalTap");
-		spinalCase("AllThe-small Things");
+		spinalCase("AllThe-small Things");*/
 
 	</script>
 </body>
