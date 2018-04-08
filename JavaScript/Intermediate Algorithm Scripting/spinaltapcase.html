@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Spinal Tap Case</title>
+	<link rel="stylesheet" type="text/css" href="css/sumallnumbersinrange.css">
+	<link href="https://fonts.googleapis.com/css?family=Fjalla+One|Hind" rel="stylesheet"> 
+
+</head>
+<body id="spinal-tap-case">
+	<header>
+		<h1>Free Code Camp</h1>
+		<h1>Intermediate Algorithm Scripting</h1>
+	</header>
+    <h1 id="title">Spinal Tap Case</h1>
+    <h2>Program Decription</h2>
+    <p>Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes.</p>
+    
+    <h3>Enter a statement.</h3>
+    <textarea id="input-str" type="text" name="str" rows="1"></textarea>
+    <br>
+    <br>
+    <button id="button">Submit</button>
+
+
+    <div class="results-div">
+    	<p id="str"></p>
+    	<p id="change-word"></p>
+    	<p id="results"></p>
+    	
+    </div>
+
+    <footer>
+        <p>This is part of <a href="https://www.freecodecamp.org/challenges/spinal-tap-case">Free Code Camp</a> Intermidate Javascript Scripting</p>
+    </footer>
+    <script
+              src="https://code.jquery.com/jquery-3.2.1.min.js"
+              integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+              crossorigin="anonymous">
+                  
+    </script>
+    <script type="text/javascript">
+    	$('#button').click(function (b){
+
+			var $inputstr = document.getElementById('input-str').value;
+			var $inputbefore = document.getElementById('input-before').value;
+			var $inputafter = document.getElementById('input-after').value;
+
+			var $statementStr = [];
+
+			$statementStr = [$inputstr, $inputbefore, $inputafter];
+
+			myReplace($inputstr, $inputbefore, $inputafter);
+
+		});
+
+		function spinalCase(str) {
+			console.log(str);
+
+			var regex = /\s+|_+/g;
+
+			var newstr = str.replace(/([a-z])([A-Z])/g, '$1 $2');
+			console.log(newstr);
+
+			var spinalCase = newstr.replace(regex, '-').toLowerCase();
+
+			console.log(spinalCase);
+
+  			return spinalCase;
+		}
+		spinalCase('This Is Spinal Tap');
+		spinalCase("The_Andy_Griffith_Show");
+		spinalCase("Teletubbies say Eh-oh");
+
+		spinalCase("thisIsSpinalTap");
+		spinalCase("AllThe-small Things");
+
+	</script>
+</body>
+</html>
