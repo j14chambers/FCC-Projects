@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sum All Primes</title>
+	<link rel="stylesheet" type="text/css" href="css/sumallnumbersinrange.css">
+	<link href="https://fonts.googleapis.com/css?family=Fjalla+One|Hind" rel="stylesheet"> 
+
+</head>
+<body id="sum-all-primes">
+	<header>
+		<h1>Free Code Camp</h1>
+		<h1>Intermediate Algorithm Scripting</h1>
+	</header>
+    <h1 id="title">Sum All Primes</h1>
+    <h2>Program Decription</h2>
+    <p>
+    	Sum all the prime numbers up to and including the provided number.<br>
+    	A prime number is defined as a number greater than one and having only two divisors, one and itself. For example, 2 is a prime number because it's only divisible by one and two.
+    </p>
+    
+    <h3>Enter in a number greater than 1.</h3>
+    <input id="primesSum" type="text" name="num"></input>
+    <br>
+    <br>
+    <button id="button">Submit</button>
+
+
+    <div class="results-div">
+    	<p id="num"></p>
+    	<p id="prime-num"></p>
+    	<p id="prime-sum"></p>
+    	
+    </div>
+
+    <footer>
+        <p>This is part of <a href="https://www.freecodecamp.org/challenges/spinal-tap-case">Free Code Camp</a> Intermidate Javascript Scripting</p>
+    </footer>
+    <script
+              src="https://code.jquery.com/jquery-3.2.1.min.js"
+              integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+              crossorigin="anonymous">
+                  
+    </script>
+    <script type="text/javascript">
+    	$('#button').click(function (b){
+			var $inputstr = document.getElementById('primesSum').value;
+			sumPrimes($inputstr);
+		});
+
+
+		function sumPrimes(num) {
+			var sieve = [];
+			var primes = [];
+			var primesSum = 0;
+
+			console.log(num);
+			$('#num').html('<h2>' + num + '</h2>');
+
+			for(var i = 2; i <= num; i++){
+				
+				if(!sieve[i] % 2 !== 0){
+					primes.push(i);
+					primesSum = i + primesSum;
+
+					for (var j = i << 1; j <= num; j += i){
+						sieve[j] = true;
+					}
+				}
+			}
+			console.log(primes);
+			$('#prime-num').html('<h2>Prime Numbers: ' + primes + '</h2>');
+			console.log(primesSum);
+			$('#prime-sum').html('<h2>Prime Numbers Sum: ' + primesSum + '</h2>');
+			return primesSum;
+
+		}
+		/*sumPrimes(10);
+		sumPrimes(6);
+		sumPrimes(97);
+		sumPrimes(47);*/
+
+	</script>
+</body>
+</html>
