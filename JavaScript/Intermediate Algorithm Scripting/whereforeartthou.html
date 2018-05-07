@@ -36,111 +36,47 @@
     </script>
     <script type="text/javascript">
 
-		function whatIsInAName(collection, source) {
-			//Prints arr1 and arr2 to console and HTML body
-			console.log(collection);
-			//$('#array-1').html('<p>[' + arr1 + ']</p>');
-			console.log(source);
-			//$('#array-2').html('<p>[' + arr2 + ']</p>');
+			function whatIsInAName(collection, source) {
 
+		console.log(source);
 
-			//console.log(Object.keys(source));
-			//console.log(Object.keys(collection[0]));
+		var sourceKeys = Object.keys(source);
+		console.log(sourceKeys);
 
-			//console.log(Object.getOwnPropertyNames(source));
-			//console.log(Object.getOwnPropertyNames(collection[2]));
+		var sourceValues = Object.values(source);
+		console.log(sourceValues);
 
-			var resultsArray = [];
-			var arrayPush = [];
+		console.log(collection);
+		var isInAName = [];
 
-			Object.getOwnPropertyNames(source).forEach(
-				function (val, idx, array){
-					//console.log(val + ' -> ' + source[val]);
+		for (var j in collection){
+			console.log(collection[j]);
+			var collectionObject = collection[j];
 
-					collection.forEach(
-						function(item){
+			//outputs the values of the object -Ex. first
+			var collectionValues = Object.values(collection[j])
+			console.log(collectionValues);
+			console.log('checking values:');
 
-							Object.getOwnPropertyNames(item).forEach(
-								function (value, index, Collectionarray){
-									//console.log(value + ' -> ' + item[value]);
+			console.log('sourceValue: ' + sourceValues.toString());
+			console.log( 'collectionValue: ' + collectionValues.toString());
+			console.log(collectionValues.indexOf(sourceValues));
 
-									if(val === value){
-										//console.log(val);
-										//console.log(value);
-
-										if(source[val] === item[value]){
-											console.log(val + ' -> ' + source[val]);
-											console.log(value + ' -> ' + item[value]);
-											console.log(true);
-
-
-											console.log(array);
-											console.log(Collectionarray);
-											console.log(Collectionarray.indexOf(array) === -1);
-											if (Collectionarray.indexOf(array) === -1) {
-												//console.log(array);
-												//console.log(Collectionarray);
-
-												resultsArray.push(item);
-												//console.log(item);
-												return resultsArray;
-											}
-
-										}
-										else{
-											console.log(false);
-										}
-										
-									}
-								}
-							);
-						}
-					);
-				}
-			);
-
-			console.log(resultsArray);
-
-		  	/*var newArr = [];
-		  
-		  	function onlyInFirst(first, second) {
-
-		  	// Looping through an array to find elements that don't exist in another array
-		    	for (var i = 0; i < first.length; i++) {
-		      		if (second.indexOf(first[i]) === -1) {
-		        		// Pushing the elements unique to first to newArr
-		        		newArr.push(first[i]);
-		     		}
-		    	}
-		  	}
-		  
-		  	// This function switch arr1 with arr2, allowing to compare the indexes of each array for the different index with each array.
-		  	onlyInFirst(arr1, arr2);
-		  	onlyInFirst(arr2, arr1);
-
-		  	console.log(newArr);
-		  	$('#results').html('<p>The New Array is: <br>[' + newArr + ']</p>');
-		  
-		  	//return newArr;
-		  	*/
+			if (collectionValues.toString().search(sourceValues.toString()) !== -1) {
+				console.log( 'V');
+				isInAName.push(collectionObject);
+				console.log(isInAName);
+			}
+			else{
+				console.log('X');
+			}
 		}
+		return isInAName;
 
-	whatIsInAName([{ first: "Romeo", last: "Montague" }, 
-				{ first: "Mercutio", last: null }, 
-				{ first: "Tybalt", last: "Capulet" }],
-		 		{ last: "Capulet" });
+	}
 
-	/*whatIsInAName([{ "a": 1, "b": 2 }, 
-					{ "a": 1 }, 
-					{ "a": 1, "b": 2, "c": 2 }],
-					{ "a": 1, "b": 2 });*/
-
-	/*whatIsInAName([{ "a": 1 }, { "a": 1 }, { "a": 1, "b": 2 }], { "a": 1 });*/
-
-	whatIsInAName([{ "a": 1, "b": 2 }, 
-					{ "a": 1 }, 
-					{ "a": 1, "b": 2, "c": 2 }], 
-					{ "a": 1, "c": 2 });
+whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
+whatIsInAName([{ "a": 1, "b": 2 }, { "a": 1 }, { "a": 1, "b": 2, "c": 2 }], { "a": 1, "b": 2 });
 
 	</script>
 </body>

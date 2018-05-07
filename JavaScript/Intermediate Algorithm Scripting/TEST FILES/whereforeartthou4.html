@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>What Is In A Name</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	
+	function whatIsInAName(collection, source) {
+
+		console.log(source);
+
+		var sourceKeys = Object.keys(source);
+		console.log(sourceKeys);
+
+		var sourceValues = Object.values(source);
+		console.log(sourceValues);
+
+		console.log(collection);
+		//var isInAName = [];
+
+		for (var j in collection){
+			console.log(collection[j]);
+			var collectionObject = collection[j];
+
+			//outputs the values of the object -Ex. "romeo"
+			var collectionValues = Object.values(collection[j]);
+			var collectionKeys = Object.keys(collection[j]);
+			console.log(collectionValues);
+			console.log('checking values:');
+
+			console.log('sourceValue: ' + sourceValues);
+			console.log( 'collectionValue: ' + collectionValues);
+
+			if (collectionValues.toString().search(sourceValues.toString()) !== -1) {
+				console.log( 'V');
+
+				console.log('sourceKeys: ' + sourceKeys.toString());
+				console.log( 'collectionKeys: ' + collectionKeys.toString());
+
+				//place back here --checking keys
+				console.log('checking KEYS:');
+				var b = 0;
+				var isInAName = [];
+				//console.log(collectionKeys);
+				console.log('collectionkeys length: ' + collectionKeys.length);
+				//console.log(collectionKeys[b]);
+				isInAName.push(collectionObject);
+				console.log(isInAName);
+			}
+
+			else if(collectionValues.toString().search(sourceValues.toString()) !== -1 && collectionObject.length != sourceKeys){
+
+				while (b <= collectionKeys.length -1) {
+					console.log('b ' + b + ': ' + collectionKeys[b]);
+
+					/*console.log('sourceKeys: ' + sourceKeys.toString());
+					console.log( 'collectionKeys: ' + collectionKeys.toString());*/
+
+					//outputs the keys of the object -Ex.  "Romeo"
+					//console.log(collectionKeys[b]);
+					console.log(sourceKeys);
+					if(sourceKeys.indexOf(collectionKeys[b]) != -1){
+						console.log(sourceKeys.indexOf(collectionKeys[b]));
+						console.log( 'P');
+					}
+					else{
+						console.log(sourceKeys.indexOf(collectionKeys[b]));
+						console.log('&');
+						break;
+					}
+					
+					b ++;
+				}
+				console.log(collectionObject);
+
+				isInAName.push(collectionObject);
+				console.log(isInAName);
+			}
+			else{
+				console.log('X');
+			}
+			
+			
+		}
+
+	}
+
+whatIsInAName([{ "a": 1, "b": 2 }, { "a": 1 }, { "a": 1, "b": 2, "c": 2 }], { "a": 1, "c": 2 });
+
+</script>
+</html>

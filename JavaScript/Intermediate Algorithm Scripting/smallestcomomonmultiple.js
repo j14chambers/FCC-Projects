@@ -6,7 +6,7 @@ e.g. for 1 and 3 - find the smallest common multiple of both 1 and 3 that is eve
 
 
 function smallestCommons(arr) {
-	console.log('WHAT IS THE THE LCM OF ' + arr);
+console.log('WHAT IS THE THE LCM OF ' + arr);
 
 	var range = [];
 
@@ -20,33 +20,26 @@ function smallestCommons(arr) {
 	});
 
 	console.log('RANGE ' + range);
-	var num1 = range[0];
-	var num2 = range[1];
+	var lcm = range[0];
+	var c = 1;
+	while (c < range.length){
+		lcm = (lcm * range[c]) / largestCommon(lcm,range[c]);
+		console.log('the LCM IS ' + lcm);
+		c++;
 
-
-	lcm = (num1 * num2) / largestCommon(num1,num2);
+	}
 	console.log('the LCM IS ' + lcm);
-
-	checkLCM(lcm, range);
-
+	return lcm;
 
 }
 
 function largestCommon(num1,num2){
-	if (num2 == num1){
+	if (num2 == 0){
 		return num1;
 	}
-	if(num1 > num2){
-		return largestCommon(num1 - num2, num2);
-	}
-	return largestCommon(num1, num2 - num1);
-}
-
-function checkLCM(checkValue, range){
-	console.log('range in checkLCM ' + range);
-	if(checkValue % range[3] == 0){
-		
+	else{
+		return largestCommon(num2, num1 % num2);
 	}
 }
 
-smallestCommons([8,44]);
+smallestCommons([1,5]);
