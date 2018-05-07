@@ -16,15 +16,16 @@ function addTogether() {
         var a = checkNum(arguments[0]);
         var b = checkNum(arguments[1]);
         
-       if(arguments[0] == undefined ||arguments[1] == undefined){
+       if(a === undefined || b === undefined){
            return undefined;
        }
        else{
-           console.log( arguments[0] + arguments[1]);
+           console.log( a + b);
+           return b + a;
         }
     }
     else{
-        var c = checkNum(arguments[0]);
+        var c = arguments[0];
         if(checkNum(c)){
             return function(arg2){
                 if(c == undefined ||checkNum(arg2) == undefined){
@@ -39,11 +40,6 @@ function addTogether() {
     }
 }
 
-
-addTogether(2,3);
-addTogether(2);
 addTogether(2, "3");
-addTogether(2)(3);
-addTogether("http://bit.ly/IqT6zt");
-addTogether(2)([3]);
+
 
