@@ -2,21 +2,61 @@
 body{
     font-family: Strait;
     font-size: 20px;
+  background: #10301D;
+  color: white;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+footer{
+  background: #DE893D;
+  margin: 50px 0 0;
+  padding: 10px 15px;
+  height: 100px;
+}
+p{
+  margin: 35px;
 }
 h1{
-    font-size: 50px;
+  font-size: 50px;
+  text-align: center;
+  margin: 30px 0;
+}
+main{
+  background: #10301D;
+  margin: 0 360px;
+  border: 10px white solid;
+  border-radius: 25px;
+  padding: 3px;
+  padding-right: 30px;
+  
 }
 .grid-container {
     display: grid;
-    grid-template-columns: 100px 100px 100px 100px;
+    grid-template-columns: 25% 25%25% 25%;
     grid-template-rows: 100px 100px 100px 100px 100px;
     grid-gap: 10px;
     background: #10301D;
     padding: 10px;
     align-content: space-evenly;
   }
+  .input-field{
+    width: 100%;
+    padding: 10px 5px;
+    margin: 0 10px;
+  }
+  textarea{
+    width: 99%;
+    font-size: 30px;
+    border-radius: 15px;
+    border: #DE893D solid 5px;
+    color: #F8FEFD;
+    background: #8a913d;
+    text-align: right;
+    margin-bottom: 25px;
+  }
 
-  .grid-container > div {
+  .grid-container > .btn {
     text-align: center;
     padding: 20px 0;
     font-size: 30px;
@@ -32,7 +72,13 @@ h1{
   .btn{
     width: 100%;
     height: 100%;
-    opacity: 0.3;
+  }
+  .btn:hover{
+    color: pink;
+    background: white;
+  }
+  .btn:active{
+    background: black;
   }
   .item0 {
     grid-column: 1/3;

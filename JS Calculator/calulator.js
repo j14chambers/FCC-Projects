@@ -1,5 +1,14 @@
+$('.btn').click(function(){ 
+   //$('#wikipedia-title').html('');
+    //var btnPressed = document.getElementById('input-search').value;
+    //console.log(searchItem);
+    console.log('clicked');
 
-function calculator(expression){
+
+
+});
+
+/* function calculator(expression){
     console.log(expression);
     for(var i in expression){
         //console.log(expression[i]);
@@ -40,5 +49,5 @@ function calculator(expression){
 }
 
 calculator('12-85+51=');
-//calculator('-1/8x58-65=');
+//calculator('-1/8x58-65='); */
 
