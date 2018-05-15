@@ -1,12 +1,41 @@
+
 $('.btn').click(function(){ 
-   //$('#wikipedia-title').html('');
-    //var btnPressed = document.getElementById('input-search').value;
-    //console.log(searchItem);
+    btnPressed = $(this).text();
     console.log('clicked');
+    console.log(btnPressed);
 
-
-
+    inputField(btnPressed);
 });
+//array of btn that were clicked
+var storedClicked = [];
+
+function inputField(btnPressed){
+    console.log('input field: ' + btnPressed);
+
+    //puts the btn clicked into the class input-field; see html file
+    $('.input-field').html(btnPressed);
+    //pushes the btn pressed into array ' storedclicked'
+    storedClicked.push(btnPressed);
+    console.log(storedClicked);
+
+    endOfExpression(btnPressed);
+}
+//if 'C' or '=' are pressed this function is ran
+function endOfExpression(){
+    if(btnPressed == 'C'){
+        //this clears the storedclicked when pressed
+        storedClicked = [];
+    }
+    else if(btnPressed == '='){
+
+        //if equals is pressed evaluate expression is ran
+        evaluateExpression(storedClicked);
+    }
+}
+
+function evaluateExpression (){
+
+}
 
 /* function calculator(expression){
     console.log(expression);
