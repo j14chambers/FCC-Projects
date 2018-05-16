@@ -2,11 +2,11 @@
 body{
     font-family: Strait;
     font-size: 20px;
-  background: #10301D;
-  color: white;
-  margin: 0;
-  padding: 0;
-  width: 100%;
+    background: #10301D;
+    color: white;
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
 footer{
   background: #DE893D;
@@ -24,7 +24,7 @@ h1{
 }
 main{
   background: #10301D;
-  margin: 0 360px;
+  margin: 0 10%;
   border: 10px white solid;
   border-radius: 25px;
   padding: 3px;
@@ -42,16 +42,16 @@ main{
   }
   .input-field{
     width: 100%;
-    padding: 10px 5px;
-    margin: 0 10px;
-    font-size: 40px;
+    padding: 10px 0px;
+    margin: 10px 5px;
+    font-size: 60px;
     border-radius: 15px;
     border: #DE893D solid 5px;
     color: #F8FEFD;
     background: #8a913d;
     text-align: right;
     margin-bottom: 25px;
-    height: 50px;
+    height: 70px;
   }
   .grid-container > .btn {
     text-align: center;
