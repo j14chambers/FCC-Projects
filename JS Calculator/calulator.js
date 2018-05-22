@@ -33,7 +33,11 @@ function endOfExpression(){
 
         //this clears the storedclicked when pressed
         storedClicked = [];
+        numbers = [];
+        array = [];
+        n = 0;
         $('.input-field').html('');
+        clear();
 
     }
     else if(btnPressed == '='){
@@ -49,7 +53,8 @@ function endOfExpression(){
 function checkForOperator(expression){
     console.log(expression);
     var expressionSymbol = ['-', '+','x', '/'];
-    var integer = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+    var integer = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+    var decimal = '.';
     var equals = '=';
     
         for(var e in expression){
@@ -59,6 +64,9 @@ function checkForOperator(expression){
 
             if(integer.indexOf(expression[e]) !== -1){
                 numbers.push(Number(expression[e])); 
+            }
+            if(decimal.indexOf(expression[e]) !== -1){
+                numbers.push(expression[e]);
             }
             console.log('exprssionsymbol indexof: ' + expressionSymbol.indexOf(expression[e]));
             if(expressionSymbol.indexOf(expression[e]) !== -1){
@@ -143,13 +151,13 @@ function evaluateExpression(expression){
 function add(){
 
 }
-var clearData = document.getElementsByClassName("clear");
-clearData.addEventListener("click",clear());
+// var clearData = document.getElementsByClassName("clear");
+// clearData.addEventListener("click",clear());
 
 function clear(){
-    var storedClicked = [];
-    var numbers = [];
-    var finalNumArr = '';
-    var array = [];
-    var n = 0;
+    console.log('clear');
+
+    console.log(storedClicked);
+    console.log(numbers);
+    console.log(array);
 }
