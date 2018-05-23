@@ -17,6 +17,13 @@ footer{
 p{
   margin: 35px;
 }
+a{
+  text-decoration: none;
+  color: currentColor;
+}
+a:hover{
+  color: #8a913d;
+}
 h1{
   font-size: 50px;
   text-align: center;
@@ -24,27 +31,26 @@ h1{
 }
 main{
   background: #10301D;
-  margin: 0 10%;
+  margin: auto;
   border: 10px white solid;
   border-radius: 25px;
   padding: 3px;
   padding-right: 30px;
-  
 }
 .grid-container {
     display: grid;
     grid-template-columns: 25% 25%25% 25%;
-    grid-template-rows: 100px 100px 100px 100px 100px;
+    grid-template-rows: repeat(70px, 5);
     grid-gap: 10px;
     background: #10301D;
-    padding: 10px;
+    padding: 5px;
     align-content: space-evenly;
   }
   .input-field{
     width: 100%;
     padding: 10px 0px;
-    margin: 10px 5px;
-    font-size: 60px;
+    margin: 5px 5px;
+    font-size: 50px;
     border-radius: 15px;
     border: #DE893D solid 5px;
     color: #F8FEFD;
@@ -55,7 +61,7 @@ main{
   }
   .grid-container > .btn {
     text-align: center;
-    padding: 20px 0;
+    padding: 10px 0;
     font-size: 30px;
     background: #F8FEFD;
     color: #10301D;
@@ -69,9 +75,10 @@ main{
   .btn{
     width: 100%;
     height: 100%;
+    font-family: Strait;
   }
   .btn:hover{
-    color: pink;
+    color: #8a913d;
     background: white;
   }
   .btn:active{
@@ -153,4 +160,8 @@ main{
     grid-row: 5;
   }
 
-
+  @media (min-width: 600px){
+    main{
+      max-width: 500px;
+    }
+  }
