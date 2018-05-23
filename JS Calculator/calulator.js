@@ -1,6 +1,7 @@
 //array of btn that were clicked
 var storedClicked = [];
 var numbers = [];
+var operator =[];
 var finalNumArr = '';
 var array = [];
 var n = 0;
@@ -34,6 +35,7 @@ function endOfExpression(){
         //this clears the storedclicked when pressed
         storedClicked = [];
         numbers = [];
+        operator = [];
         array = [];
         n = 0;
         $('.input-field').html('');
@@ -70,10 +72,8 @@ function checkForOperator(expression){
             }
             console.log('exprssionsymbol indexof: ' + expressionSymbol.indexOf(expression[e]));
             if(expressionSymbol.indexOf(expression[e]) !== -1){
-                operator = expression[e];
-                console.log('operator: ' + operator);
-                
                 break;
+                
             }
             numbers.join('');
             console.log('numbers ');
@@ -84,6 +84,8 @@ function checkForOperator(expression){
         console.log(finalNum);
 
         expression.splice(0,e);
+        operator.push(expression[0]);
+        console.log(operator);
         expression.splice(0,1);
         console.log(expression);
 
@@ -106,54 +108,56 @@ function checkForOperator(expression){
         //var array = [];
         //array.push(Number(num));
         console.log(array);
-    }
-   
+        console.log(operator);
+        var r = 0;
+        var equal = '=';
 
-
-function evaluateExpression(expression){
-    console.log(expression);
-    var num1 = '';
-    var num2 = '';
-    var expressionSymbol = ['-', '+','x', '/'];
-    var equals = '=';
-
-    for (var i in expression) {
-        var currentValue = expression[i];
-
-        for(var e in expressionSymbol){
-            if(currentValue == expressionSymbol[e]){
-                var evaluate = currentValue;
-                //console.log(evaluate);
-
-                //console.log(i);
-                
-                num1 = expression.splice(0,i).join('');
-                //console.log(expression.length);
-                console.log(expression);
-
-                num3 = expression.splice(1,i).join('');
-                console.log(num3);
-                console.log(expression);
+        finalAnswer = calculate(array[r], operator[r], array[r+1]);
+        console.log(finalAnswer);
+        for(r = 1; r < array.length; r++){
+            console.log('r ' + r);
+            console.log('operator ' + operator[r]);
+            console.log('array ' + array[r]);
+            
+            finalAnswer = calculate(finalAnswer, operator[r], array[r+1]);
+            console.log(finalAnswer);
+            if(equal.indexOf(operator[r]) !== -1){
+                break;
             }
         }
-        // if(currentValue == equals){
-        //     num2 = expression.splice(1,i-1).join('');
-        //     //calculate(num1, evaluate, num2);
-        //     //$('.input-field').append(answer);
-        // }
-        
+        console.log('final answer');
+        console.log(finalAnswer);
+        $('.input-field').html(finalAnswer);
+        return finalAnswer;     
     }
-    //console.log(expression);
-    console.log('num1 = ' + num1);
-    console.log('num2 = ' + num3);
-}
-
-function add(){
-
-}
-// var clearData = document.getElementsByClassName("clear");
-// clearData.addEventListener("click",clear());
-
+    function calculate(num1,operation,num2) {
+        switch(operation){
+            case '+':
+            answer = num1 + num2;
+            console.log('Answer = ' + answer);
+            return answer;
+            break;
+            case '-':
+            answer = num1 - num2;
+            console.log('Answer = ' + answer);
+            return answer;
+            break;
+            case 'x':
+            answer = num1 * num2;
+            console.log('Answer = ' + answer);
+            return answer;
+            break;
+            case '/':
+            answer = num1 / num2;
+            console.log('Answer = ' + answer);      
+            return answer;
+            break;
+            default:
+            console.log('No operation perfrom');
+            answer = num1;
+            return answer;
+        }
+    }
 function clear(){
     console.log('clear');
 
