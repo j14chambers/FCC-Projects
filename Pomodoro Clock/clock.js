@@ -2,13 +2,35 @@
 var CountDownTime = new Date('June 5,2018 1:00').getTime();
 
 $('#startTimer').click(function(){
-    var minutesInput = document.getElementById('minutes-input').value;
-    var hoursInput = document.getElementById('hours-input').value;
-    
-    var x = setInterval(function(){
+    var timerMinutes = document.getElementById('minutes-input').value;
+    var timerHours = document.getElementById('hours-input').value;
+    var timerSeconds = 60;
+    var s = setInterval(function(){
         SetTimer();
+        if(timerSeconds >= 0){
+            timerSeconds = timerSeconds - 1;
+            console.log(timerSeconds + ' Sec ');
+        }
     },1000);
+
+    var m = setInterval(function(){
+        SetTimer();
+        if(timerMinutes >= 0){
+            timerMinutes = timerMinutes - 1;
+            console.log(timerMinutes + ' Min ');
+        }
+    },1000*60);
+
+    var h = setInterval(function(){
+        if(timerHours >= 0){
+            timerHours = timerHours - 1;
+            console.log(timerHours + ' h ');
+        }
+
+    },1000*60*60);
+    document.getElementById("timer").innerHTML = timerHours + "h " + timerMinutes + "m " + timerSeconds + "s ";
 });
+
 
 function SetTimer(){
     
@@ -22,9 +44,7 @@ function SetTimer(){
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
   
-  document.getElementById("timer").innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
+  document.getElementById("demo").innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
 
 
-} 
-
-
+}
