@@ -1,34 +1,49 @@
 // Timer variable
-var CountDownTime = new Date('June 5,2018 1:00').getTime();
+var CountDownTime = new Date('June 5,2018 20:00').getTime();
+var timerSeconds = 10;
 
 $('#startTimer').click(function(){
     var timerMinutes = document.getElementById('minutes-input').value;
     var timerHours = document.getElementById('hours-input').value;
-    var timerSeconds = 60;
-    var s = setInterval(function(){
-        SetTimer();
-        if(timerSeconds >= 0){
-            timerSeconds = timerSeconds - 1;
-            console.log(timerSeconds + ' Sec ');
-        }
-    },1000);
+
+   // $('#minutes').html(timerMinutes + ' minutes');
+    //$('#seconds').html(timerSeconds + ' Seconds');
+
 
     var m = setInterval(function(){
-        SetTimer();
-        if(timerMinutes >= 0){
+        
+        if(timerMinutes !== 0){
             timerMinutes = timerMinutes - 1;
             console.log(timerMinutes + ' Min ');
-        }
-    },1000*60);
+            $('#minutes').html(timerMinutes + ' minutes');
 
-    var h = setInterval(function(){
-        if(timerHours >= 0){
-            timerHours = timerHours - 1;
-            console.log(timerHours + ' h ');
+            timerSeconds = 10;
+            var s = setInterval(function(){
+                SetTimer(); 
+                if(timerSeconds !== 0 && timerMinutes !== 0){
+                        
+                    timerSeconds = timerSeconds - 1;
+                    console.log(timerSeconds + ' Sec ');
+                    $('#seconds').html(timerSeconds + ' Seconds');
+                }
+            },1000);
         }
+    },1000*10);
 
-    },1000*60*60);
-    document.getElementById("timer").innerHTML = timerHours + "h " + timerMinutes + "m " + timerSeconds + "s ";
+    
+
+        
+        
+
+
+    // var h = setInterval(function(){
+    //     if(timerHours >= 0){
+    //         timerHours = timerHours - 1;
+    //         console.log(timerHours + ' h ');
+    //     }
+
+    // },1000*60*60);
+   // $("#timer").html(timerMinutes + "m " + timerSeconds + "s ");
 });
 
 
