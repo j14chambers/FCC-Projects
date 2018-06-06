@@ -1,41 +1,15 @@
 // Timer variable
 var CountDownTime = new Date('June 5,2018 20:00').getTime();
-var timerSeconds = 10;
-
+var timerMinutes = 0,timerSeconds = 0;
+timerSeconds = 10;
 $('#startTimer').click(function(){
-    var timerMinutes = document.getElementById('minutes-input').value;
-    var timerHours = document.getElementById('hours-input').value;
+    timerMinutes = document.getElementById('minutes-input').value;
+    timerHours = document.getElementById('hours-input').value;
 
-   // $('#minutes').html(timerMinutes + ' minutes');
-    //$('#seconds').html(timerSeconds + ' Seconds');
-
-
-    var m = setInterval(function(){
-        
-        if(timerMinutes !== 0){
-            timerMinutes = timerMinutes - 1;
-            console.log(timerMinutes + ' Min ');
-            $('#minutes').html(timerMinutes + ' minutes');
-
-            timerSeconds = 10;
-            var s = setInterval(function(){
-                SetTimer(); 
-                if(timerSeconds !== 0 && timerMinutes !== 0){
-                        
-                    timerSeconds = timerSeconds - 1;
-                    console.log(timerSeconds + ' Sec ');
-                    $('#seconds').html(timerSeconds + ' Seconds');
-                }
-            },1000);
-        }
-    },1000*10);
-
-    
-
-        
-        
-
-
+   $('#minutes').html(timerMinutes);
+   $('#seconds').html(timerSeconds);
+    startTimer(timerMinutes,timerSeconds);
+            
     // var h = setInterval(function(){
     //     if(timerHours >= 0){
     //         timerHours = timerHours - 1;
@@ -46,6 +20,28 @@ $('#startTimer').click(function(){
    // $("#timer").html(timerMinutes + "m " + timerSeconds + "s ");
 });
 
+function startTimer(timerMinutes,timerSeconds){
+    var m = setInterval(function(){
+        
+        if(timerMinutes !== 0){
+            timerMinutes = timerMinutes - 1;
+            console.log(timerMinutes + ' Min ');
+            $('#minutes').html(timerMinutes);
+            timerSeconds = 10;
+            var s = setInterval(function(){
+                SetTimer(); 
+                if(timerSeconds !== 0 && timerMinutes !== 0){
+                        
+                    timerSeconds = timerSeconds - 1;
+                    console.log(timerSeconds + ' Sec ');
+                    $('#seconds').html(timerSeconds);
+                }
+            },1000);
+            
+        }
+        
+    },1000*10);
+}
 
 function SetTimer(){
     
@@ -59,7 +55,7 @@ function SetTimer(){
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
   
-  document.getElementById("demo").innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
+//   document.getElementById("demo").innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
 
 
 }
