@@ -6,19 +6,29 @@
     <title>Pomodoro Clock</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="clock.css" />
+    <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC|Bungee+Inline" rel="stylesheet"> 
     
 </head>
 <body>
     <section class="clock">
+        <label><h2>Hours</h2></label>
         <input type="text" id="hours-input">
+        <label><h2>minutes</h2></label>
         <input type="text" id="minutes-input">
         <button type="submit" id="startTimer">Start Timer</button>
     </section>
-
-    <!-- <p>Live Example</p>
-    <button onclick="delayedAlert();">Show an alert box after two seconds</button> -->
-    <p id="demo"></p>
-    <p id="timer"></p>    
+    <section class="timer">
+        <!-- <p id="demo">June 5 2018 6:25:00</p>
+        <p id="timer">June 5 2018 6:25:00</p> -->
+        <div class="countdown">
+            <h3 id="minutes"></h3>
+            <h3> : </h3>
+            <h3 id="seconds"></h3>
+        </div>
+        
+    </section>
+       
+           
     
 </body>
     <script
