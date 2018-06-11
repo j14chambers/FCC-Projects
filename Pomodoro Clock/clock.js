@@ -1,61 +1,69 @@
 // Timer variable
 var CountDownTime = new Date('June 5,2018 20:00').getTime();
-var timerMinutes = 0,timerSeconds = 0;
+var timerMinutes = 0,timerHours = 0, timerSeconds = 10;
 timerSeconds = 10;
+var h, m, s;
+
 $('#startTimer').click(function(){
+    timerHours = document.getElementById('hours-input').value;
     timerMinutes = document.getElementById('minutes-input').value;
     timerHours = document.getElementById('hours-input').value;
-
-   $('#minutes').html(timerMinutes);
-   $('#seconds').html(timerSeconds);
-    startTimer(timerMinutes,timerSeconds);
-            
-    // var h = setInterval(function(){
-    //     if(timerHours >= 0){
-    //         timerHours = timerHours - 1;
-    //         console.log(timerHours + ' h ');
-    //     }
-
-    // },1000*60*60);
-   // $("#timer").html(timerMinutes + "m " + timerSeconds + "s ");
+    
+    $('#hours').html(timerHours);
+    $('#minutes').html(timerMinutes - 1);
+    $('#seconds').html(timerSeconds);
+    startTimer(timerHours, timerMinutes - 1, timerSeconds);
 });
 
-function startTimer(timerMinutes,timerSeconds){
-    var m = setInterval(function(){
+$('#stop-timer').click(function(){
+    clearInterval(m);
+    clearInterval(s);
+    clearInterval(h);
+
+    $('#hours').html(00);
+    $('#minutes').html(00);
+    $('#seconds').html(00);
+
+});
+
+function startTimer(timerHours, timerMinutes,timerSeconds){
+    hoursCountDown(timerHours);
+    mintuesCountDown(timerMinutes);
+}
+function hoursCountDown(timerHours){
+    h = setInterval(function(){
+        
+        if(timerHours !== 0){
+            timerHours = timerHours - 1;
+            console.log(timerHours + ' Hrs ');
+            $('#hours').html(timerHours);    
+        }
+        
+    },1000*20);
+}
+
+function mintuesCountDown(timerMinutes){
+    m = setInterval(function(){
         
         if(timerMinutes !== 0){
             timerMinutes = timerMinutes - 1;
             console.log(timerMinutes + ' Min ');
             $('#minutes').html(timerMinutes);
-            timerSeconds = 10;
-            var s = setInterval(function(){
-                SetTimer(); 
-                if(timerSeconds !== 0 && timerMinutes !== 0){
-                        
-                    timerSeconds = timerSeconds - 1;
-                    console.log(timerSeconds + ' Sec ');
-                    $('#seconds').html(timerSeconds);
-                }
-            },1000);
-            
+            secondCountDown(timerSeconds);       
         }
         
     },1000*10);
 }
 
-function SetTimer(){
+function secondCountDown(timerSeconds){
+    s = setInterval(function(){
+        if(timerSeconds !== 0 ){
+                
+            timerSeconds = timerSeconds - 1;
+            console.log(timerSeconds + ' Sec ');
+            $('#seconds').html(timerSeconds);
+        }
+    },1000);
     
-    //Current time
-    var now = new Date().getTime();
-    
-    var distance = CountDownTime- now;
-    // Time calculations for days, hours, minutes and seconds
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-  
-//   document.getElementById("demo").innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
-
-
 }
+
