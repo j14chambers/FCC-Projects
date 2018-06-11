@@ -10,26 +10,35 @@
     
 </head>
 <body>
-    <section class="clock">
-        <label><h2>Hours</h2></label>
-        <input type="text" id="hours-input">
-        <label><h2>minutes</h2></label>
-        <input type="text" id="minutes-input">
-        <button type="submit" id="startTimer">Start Timer</button>
-    </section>
-    <section class="timer">
-        <!-- <p id="demo">June 5 2018 6:25:00</p>
-        <p id="timer">June 5 2018 6:25:00</p> -->
-        <div class="countdown">
-            <h3 id="minutes"></h3>
-            <h3> : </h3>
-            <h3 id="seconds"></h3>
-        </div>
-        
-    </section>
-       
-           
+    <header>
+        <h1>Pomodoro Clock</h1>
+    </header>
+    <main>
+        <section class="clock">
+            <label><h2>Hours</h2></label>
+            <input type="text" id="hours-input">
+            <label><h2>minutes</h2></label>
+            <input type="text" id="minutes-input">
+        </section>
+        <section>
+            <button type="submit" id="startTimer">Start Timer</button>
+            <button type="submit" id="stop-timer">Stop</button>
+        </section>
+        <section class="timer">
+            <!-- <p id="demo">June 5 2018 6:25:00</p>
+            <p id="timer">June 5 2018 6:25:00</p> -->
+            <div class="countdown">
+                <h3 id="minutes">3</h3>
+                <h3> : </h3>
+                <h3 id="seconds">30</h3>
+            </div>
+                
+        </section>
+    </main>
     
+<footer>
+    <p>This webpage was created by Jessica Chambers as part of <a href="https://www.freecodecamp.org/challenges/">Free Code Camp</a> JavaScript Projects. </p>
+</footer>   
 </body>
     <script
         src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">

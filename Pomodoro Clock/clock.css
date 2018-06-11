@@ -3,14 +3,24 @@ body{
     font-size: 20px;
     color: white;
     background: #69306d;
+    
+}
+header{
+    
+}
+main{
     border: #fff solid 10px;
     border-radius: 15px;
 }
-header{
-    background: #cee0dc;
+h1{
+    text-align: center;
+    font-size: 50px;
 }
 section{
     margin: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
 .clock h2{
     display: inline;
@@ -24,31 +34,56 @@ section{
     text-align: center;
     color: white;
     background: #69306d;
+    border: none;
+    border-bottom: 3px solid;
 }
 button{
     padding: 10px 30px;
-  
     border-radius: 15px;
     background: #14213d;
     font-family: 'Bungee Inline', cursive;
     font-size: 20px;
-    margin: 10px 25%;
+    margin: 10px 20px;
     color: #fff;
 }
+#stop-timer{
+    background: #773344;
+    display: inline-block;
+}
 button:hover{
+    background: white;
+    color: #69306d;
+}
+#stop-timer:hover{
     background: white;
     color: #69306d;
 }
 h3{
     font-family: 'Bowlby One SC', cursive;
     font-size: 90px;
-    color: #773344;
+    color: #fff;
     display: inline-block;
     margin: auto;
+    text-align: center;
 }
 .countdown{
     border-radius: 25px;
-    border: 5px solid #14213d;
-    background: #fff;
+    /* border: 5px solid #14213d;
+    background: #fff; */
     text-align: center;
+    padding: 10px 30px;
+}
+a{
+    text-decoration: none;
+    color: currentColor;
+}
+a:hover{
+    color: #cee0dc;
+}
+footer{
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+footer p{
+    margin: 20px;
 }
