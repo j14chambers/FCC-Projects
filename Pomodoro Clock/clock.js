@@ -3,7 +3,7 @@ var CountDownTime = new Date('June 5,2018 20:00').getTime();
 var timerMinutes = 0,timerHours = 0, timerSeconds = 10;
 timerSeconds = 10;
 var h, m, s;
-
+//Start Timer button
 $('#startTimer').click(function(){
     timerHours = document.getElementById('hours-input').value;
     timerMinutes = document.getElementById('minutes-input').value;
@@ -15,21 +15,20 @@ $('#startTimer').click(function(){
     startTimer(timerHours, timerMinutes - 1, timerSeconds);
 });
 
+//Stop timer button
 $('#stop-timer').click(function(){
     clearInterval(m);
     clearInterval(s);
     clearInterval(h);
-
-    $('#hours').html(00);
-    $('#minutes').html(00);
-    $('#seconds').html(00);
-
 });
 
+//Intiate the countdown
 function startTimer(timerHours, timerMinutes,timerSeconds){
     hoursCountDown(timerHours);
     mintuesCountDown(timerMinutes);
 }
+
+//Countdown for hours
 function hoursCountDown(timerHours){
     h = setInterval(function(){
         
@@ -42,6 +41,7 @@ function hoursCountDown(timerHours){
     },1000*20);
 }
 
+//Coutdown for minutes
 function mintuesCountDown(timerMinutes){
     m = setInterval(function(){
         
@@ -55,6 +55,7 @@ function mintuesCountDown(timerMinutes){
     },1000*10);
 }
 
+//coutdown for seconds
 function secondCountDown(timerSeconds){
     s = setInterval(function(){
         if(timerSeconds !== 0 ){
