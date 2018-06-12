@@ -43,6 +43,7 @@ function hoursCountDown(timerHours){
 
 //Coutdown for minutes
 function mintuesCountDown(timerMinutes){
+    secondCountDown(timerSeconds); 
     m = setInterval(function(){
         
         if(timerMinutes !== 0){
