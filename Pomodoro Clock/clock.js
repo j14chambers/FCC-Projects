@@ -1,17 +1,14 @@
 // Timer variable
-var CountDownTime = new Date('June 5,2018 20:00').getTime();
-var timerMinutes = 0,timerHours = 0, timerSeconds = 10;
-timerSeconds = 10;
+var timerMinutes = 0,timerHours = 0, timerSeconds = 60;
 var h, m, s;
 //Start Timer button
 $('#startTimer').click(function(){
-    timerHours = document.getElementById('hours-input').value;
+    //timerHours = document.getElementById('hours-input').value;
     timerMinutes = document.getElementById('minutes-input').value;
-    timerHours = document.getElementById('hours-input').value;
     
-    $('#hours').html(timerHours);
-    $('#minutes').html(timerMinutes - 1);
+    //$('#hours').html(timerHours);
     $('#seconds').html(timerSeconds);
+    $('#minutes').html(timerMinutes - 1);
     startTimer(timerHours, timerMinutes - 1, timerSeconds);
 });
 
@@ -19,31 +16,33 @@ $('#startTimer').click(function(){
 $('#stop-timer').click(function(){
     clearInterval(m);
     clearInterval(s);
-    clearInterval(h);
+    //clearInterval(h);
+    console.log('STOP');
 });
 
 //Intiate the countdown
-function startTimer(timerHours, timerMinutes,timerSeconds){
-    hoursCountDown(timerHours);
+function startTimer(timerMinutes,timerSeconds){
+    //hoursCountDown(timerHours);
     mintuesCountDown(timerMinutes);
 }
 
 //Countdown for hours
-function hoursCountDown(timerHours){
-    h = setInterval(function(){
+// function hoursCountDown(timerHours){
+
+//     h = setInterval(function(){
+//         if(timerHours !== 0){
+//             timerHours = timerHours - 1;
+//             console.log(timerHours + ' Hrs ');
+//             $('#hours').html(timerHours); 
+//         }
+
         
-        if(timerHours !== 0){
-            timerHours = timerHours - 1;
-            console.log(timerHours + ' Hrs ');
-            $('#hours').html(timerHours);    
-        }
-        
-    },1000*20);
-}
+//     },1000*60*60);
+// }
 
 //Coutdown for minutes
 function mintuesCountDown(timerMinutes){
-    secondCountDown(timerSeconds); 
+    secondCountDown(timerSeconds);
     m = setInterval(function(){
         
         if(timerMinutes !== 0){
@@ -53,7 +52,7 @@ function mintuesCountDown(timerMinutes){
             secondCountDown(timerSeconds);       
         }
         
-    },1000*10);
+    },1000*60);
 }
 
 //coutdown for seconds
