@@ -54,4 +54,22 @@ This repository contains the projects and programming files that I have complete
   9. [Sorted Union](https://github.com/j14chambers/FCC-Projects/tree/master/JavaScript/Intermediate%20Algorithm%20Scripting/sortedunion)
   10. [Sum all Numbers in A Range](https://github.com/j14chambers/FCC-Projects/tree/master/JavaScript/Intermediate%20Algorithm%20Scripting/sumallnumbersinrange)
   11. [Wherefore Art Thou](https://github.com/j14chambers/FCC-Projects/tree/master/JavaScript/Intermediate%20Algorithm%20Scripting/whereforeartthou)
-  12.
+  12. [Arguments Optional](https://github.com/j14chambers/FCC-Projects/tree/master/JavaScript/Intermediate%20Algorithm%20Scripting/argumentsoptional)
+  13. [Binary Agents](https://github.com/j14chambers/FCC-Projects/tree/master/JavaScript/Intermediate%20Algorithm%20Scripting/binaryagents)
+  14. [Drop It](https://github.com/j14chambers/FCC-Projects/tree/master/JavaScript/Intermediate%20Algorithm%20Scripting/dropit)
+  15. [Everything Be True](https://github.com/j14chambers/FCC-Projects/tree/master/JavaScript/Intermediate%20Algorithm%20Scripting/everthingbetrue)
+  16. [Fibnacci Numbers](https://github.com/j14chambers/FCC-Projects/tree/master/JavaScript/Intermediate%20Algorithm%20Scripting/fibonaccinumbers)
+  17. [Finders Keepers](https://github.com/j14chambers/FCC-Projects/tree/master/JavaScript/Intermediate%20Algorithm%20Scripting/finderskeepers)
+  18. [Smallest Common Multiple](https://github.com/j14chambers/FCC-Projects/tree/master/JavaScript/Intermediate%20Algorithm%20Scripting/smallestcomomonmultiple)
+  19. [Spinal Tap Case](https://github.com/j14chambers/FCC-Projects/tree/master/JavaScript/Intermediate%20Algorithm%20Scripting/spinaltapcase)
+  20. [Steam Roller](https://github.com/j14chambers/FCC-Projects/tree/master/JavaScript/Intermediate%20Algorithm%20Scripting/steamroller)
+  21. [Sum all Prime](https://github.com/j14chambers/FCC-Projects/tree/master/JavaScript/Intermediate%20Algorithm%20Scripting/sumallprime)
+
+  #### Intermediate JavaScript Projects
+  1. [JS Calculator](https://github.com/j14chambers/FCC-Projects/tree/master/JS%Calculator)
+      
+      [Codepen URL](https://codepen.io/j14chambers/pen/OZGbMG)
+  2. [Pomodoro Clock](https://github.com/j14chambers/FCC-Projects/tree/master/pomodoro%clock)
+      
+      [Codepen URL](https://codepen.io/j14chambers/pen/oyWRjQ)
+
