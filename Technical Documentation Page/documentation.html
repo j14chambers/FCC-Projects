@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Questions of the Week</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="documentation.css" />
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Roboto+Slab" rel="stylesheet"> 
+    <script src="main.js"></script>
+</head>
+<body class="wrapper">
+    <header id="header">
+        <h1>Technical Documentation</h1>
+    </header>
+    <main id="main-doc">
+        <section class="main-section" id="circle-shape">
+            <header><h2>How to Make a Circle</h2></header>
+            <p>A circle is made by making the border-radius half the width and height.</p>
+            <p id="circle"></p>
+            <pre> &lt;p id="circle"&gt;&lt;p&gt;</pre>
+            <pre>#circle { 
+    width: 200px; 
+    height: 200px;
+    background: #e0777d;;
+    -moz-border-radius: 100px; 
+    -webkit-border-radius: 100px; 
+    border-radius: 100px;
+}
+        </pre>
+        </section>
+        <section class="main-section" id="parallelogram-shape">
+            <header><h2>How to make a Parallelogram</h2></header>
+            <p id="parallelogram"></p>
+            <pre> &lt;p id="parallelogram"&gt;&lt;p&gt;</pre>
+            <pre>#parallelogram { 
+    width: 150px; 
+    height: 100px;
+    -webkit-transform: skew(20deg);
+    -moz-transform: skew(20deg);
+    -o-transform: skew(20deg);
+    background: #e0777d; 
+}
+            </pre>
+        </section>
+        <section class="main-section" id="center-btn">
+            <header><h2>How to Center a Button</h2></header>
+            <div class="btn-div">
+                <button class="btn-a">Button A</button>
+            </div>
+            
+            <pre>
+&lt;div class="btn-div"&gt;
+    &lt;button&gt;Button A&lt;button&gt;
+&lt;/div&gt;
+            </pre>
+            <pre>button {
+    font-size: 18px;
+    color: white;
+    margin: 15px;
+    padding: 25px 60px;
+    background: #56667a;
+    border: 5px solid gold;
+}
+.btn-div{
+    text-align: center;
+}
+            </pre>
+        </section>
+        <section class="main-section" id="box-shadow">
+            <header><h2>Box Shadowing a Button</h2></header>
+            <button class="btn-1">Button 1</button>
+            <pre> &lt;button&gt; Button 1 &lt;button&gt;</pre>
+    
+            <pre>button {
+    font-size: 18px;
+    margin: 15px;
+    padding: 20px 60px;
+    background: #56667a;
+    border: 3px solid gold;
+    box-shadow: 0px 10px 20px;
+}
+            </pre>
+        </section>
+
+        <section class="main-section" id="progress-bar">
+            <header><h2>How to Change the Color of the Progress Bar</h2></header>
+            <progress id="progress-bar" max="100" value="70">
+                70%
+            </progress>
+            <pre> &lt;progress id="progress-bar" max="100" value="70"&gt;&lt;progress&gt;</pre>
+            <pre>progress{
+    border: 2px solid #9993a3;
+    background: #e0777d;
+    color: #56667a;
+    margin: 40px 0 80px;
+    height: 50px;
+    width: 60%;
+}
+            </pre>
+        </section>
+        
+
+    </main>
+    <nav id="navbar">
+        <a href="#circle-shape" class="nav-link">How to Make a Circle</a>
+        <a href="#parallelogram-shape" class="nav-link">How to make a Parallelogram</a>
+        <a href="#center-btn" class="nav-link">How to Center a Button</a>
+        <a href="#box-shadow" class="nav-link">Box Shadowing a Button</a>
+        <a href="#progress-bar" class="nav-link">How to Change the Color of the Progress Bar</a>
+
+    </nav>
+    <footer>
+        <p>This webpage was created by Jessica Chambers as part of <a href="https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-projects/build-a-technical-documentation-page">Free Code Camp </a> Responsive Web Design Projects. </p>
+        </footer>
+</body>
+</html>

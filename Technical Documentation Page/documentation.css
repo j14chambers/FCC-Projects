@@ -1,0 +1,134 @@
+/*CODE FOR HTML TAGS*/
+body{
+    margin: 25px 15px;
+    font-size: 18px;
+}
+h1{
+    font-family: 'Roboto Slab', serif;
+    text-align: center;
+    font-size: 50px;
+}
+h2{
+    font-size: 30px;
+    font-family: 'Roboto Slab', serif;
+}
+pre{
+    background: #9993a3;
+    color: white;
+    padding: 10px;
+    white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word; 
+    font-size: 12px;
+}
+main{
+    grid-area: content;
+}
+nav{
+    grid-area: sidebar;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    color: gold;
+}
+nav a{
+    display: block;
+    font: 18px;
+    font-family: 'Merriweather', serif;
+    margin: 10px 0;
+    padding: 5px;
+}
+#header{
+    grid-area: header;
+}
+footer{
+    grid-area: footer;
+    text-align: center;
+}
+.wrapper {
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns: 100%;
+    grid-template-areas:
+     "header"
+     "sidebar"
+     "content"
+     "footer"
+  }
+
+/*CODE TAGS FOR DOCUMENTATION*/
+p{
+    margin: 20px;
+    font-family: 'Merriweather', serif;
+}
+#circle { 
+    width: 200px; 
+    height: 200px;
+    background: #e0777d;
+    -moz-border-radius: 100px; 
+    -webkit-border-radius: 100px; 
+    border-radius: 100px;
+}
+#parallelogram { width: 150px;
+    height: 100px;
+    -webkit-transform: skew(20deg);
+    -moz-transform: skew(20deg);
+    -o-transform: skew(20deg); 
+    background: #e0777d; 
+}
+progress::-moz-progress-bar{
+    background-color: #56667a !important;
+}
+progress{
+    border: 2px solid #9993a3;
+    background: #e0777d;
+    color: #56667a;
+    margin: 40px 0 80px;
+    height: 50px;
+    width: 100%;
+}
+.btn-div{
+    text-align: center;
+}
+.btn-a {
+    font-size: 18px;
+    color: white;
+    margin: 15px;
+	padding: 25px 60px;
+	background: #56667a;
+	border: 5px solid gold;
+}
+.btn-1 {
+    font-size: 18px;
+    margin: 15px;
+	padding: 20px 60px;
+	background: #56667a;
+	border: 3px solid gold;
+    box-shadow: 0px 10px 20px;
+}
+
+@media only screen and (min-width: 600px)   {
+    .wrapper {
+  grid-gap: 20px;
+        grid-template-columns: 220px auto;
+        grid-template-areas:
+  "header  header"
+        "sidebar content"
+        "footer  footer";
+        min-width: 600px;
+    }
+    pre{
+        font-size: 18px;
+    }
+    body{
+        margin: 25px;
+    }
+    progress{
+        width: 70%;
+    }
+}
