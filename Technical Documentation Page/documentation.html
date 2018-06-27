@@ -12,12 +12,16 @@
 <body class="wrapper">
     <header id="header">
         <h1>Technical Documentation</h1>
+        <h3>These are questions that I have Googled in the past month. So I decided to do this as documentation. It will be a good way to see what questions I asked over time.</h3>
     </header>
     <main id="main-doc">
         <section class="main-section" id="circle-shape">
             <header><h2>How to Make a Circle</h2></header>
-            <p>A circle is made by making the border-radius half the width and height.</p>
+            <p>A circle is pretty simple to make. At some point, I was trying to make one and I could not get to round evenly. </p>
+            
             <p id="circle"></p>
+            <p>A circle is made by making the <code>border-radius</code> half the <code>width</code> and <code>height</code>. Just adjust the height and width according to your perferance.</p>
+
             <pre> &lt;p id="circle"&gt;&lt;p&gt;</pre>
             <pre>#circle { 
     width: 200px; 
@@ -31,7 +35,9 @@
         </section>
         <section class="main-section" id="parallelogram-shape">
             <header><h2>How to make a Parallelogram</h2></header>
+            <p>I was wondering how to get a square to slat on one side. So I looked at a parallelogram. I don't know much about skewing but it's used in making the sides slat.</p>
             <p id="parallelogram"></p>
+            <p>By using <code>skew</code>, you can change the shape easily. Each transform is for different browsers.</p>
             <pre> &lt;p id="parallelogram"&gt;&lt;p&gt;</pre>
             <pre>#parallelogram { 
     width: 150px; 
@@ -45,10 +51,11 @@
         </section>
         <section class="main-section" id="center-btn">
             <header><h2>How to Center a Button</h2></header>
+            <p>Yep, I forgot how to center a button. It is a simple concept.</p>
             <div class="btn-div">
                 <button class="btn-a">Button A</button>
             </div>
-            
+            <p>Put the button inside a <code>div</code> and use <code>text-align</code> to center the button.</p>
             <pre>
 &lt;div class="btn-div"&gt;
     &lt;button&gt;Button A&lt;button&gt;
@@ -68,8 +75,10 @@
             </pre>
         </section>
         <section class="main-section" id="box-shadow">
-            <header><h2>Box Shadowing a Button</h2></header>
+            <header><h2>Adding Shadowing to a Button</h2></header>
+            
             <button class="btn-1">Button 1</button>
+            <p><code>box-shadow</code> is used to adjust the shadows around a object.</p>
             <pre> &lt;button&gt; Button 1 &lt;button&gt;</pre>
     
             <pre>button {
@@ -85,9 +94,11 @@
 
         <section class="main-section" id="progress-bar">
             <header><h2>How to Change the Color of the Progress Bar</h2></header>
+            <p>I did not know that this tag exisited. When I saw it, I added to a random site that I was working on.</p>
             <progress id="progress-bar" max="100" value="70">
                 70%
             </progress>
+            <p>So think of <code>max</code> as 100%. It can be any value, acting as the total number of items. The <code>value</code> is how much is completed or left, depending on how you do it.</p>
             <pre> &lt;progress id="progress-bar" max="100" value="70"&gt;&lt;progress&gt;</pre>
             <pre>progress{
     border: 2px solid #9993a3;
