@@ -12,6 +12,12 @@ h2{
     font-size: 30px;
     font-family: 'Roboto Slab', serif;
 }
+h3{
+    margin: 15px 25px;
+}
+code{
+    padding: 0 3px;
+}
 pre{
     background: #9993a3;
     color: white;
@@ -28,10 +34,12 @@ main{
 }
 nav{
     grid-area: sidebar;
+    background: #56667a;
+    
 }
 a{
     text-decoration: none;
-    color: black;
+    color: white;
 }
 a:hover{
     color: gold;
@@ -40,15 +48,20 @@ nav a{
     display: block;
     font: 18px;
     font-family: 'Merriweather', serif;
-    margin: 10px 0;
+    margin: 10px 20px;
     padding: 5px;
 }
 #header{
     grid-area: header;
+    background: #56667a;
+    color: white;
 }
 footer{
     grid-area: footer;
     text-align: center;
+    background: #56667a;
+    color: white;
+    
 }
 .wrapper {
     display: grid;
@@ -115,8 +128,10 @@ progress{
 
 @media only screen and (min-width: 600px)   {
     .wrapper {
-  grid-gap: 20px;
-        grid-template-columns: 220px auto;
+        
+        grid-row-gap: 0;
+        grid-column-gap: 20px;
+        grid-template-columns: 25% auto;
         grid-template-areas:
   "header  header"
         "sidebar content"
@@ -131,5 +146,11 @@ progress{
     }
     progress{
         width: 70%;
+    }
+    footer{
+        padding: 15px;
+    }
+    #header{
+        height: 260px;
     }
 }
