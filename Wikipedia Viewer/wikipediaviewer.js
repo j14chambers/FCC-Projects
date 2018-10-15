@@ -3,7 +3,7 @@ $(function(){
 
 
 //do not delete above this line
-    
+    //RUN CODE WHEN SEARCH BUTTON IS CLICKED
     $('#search-click').click(function(){ 
     	$('#wikipedia-title').html('');
     	var searchItem = document.getElementById('input-search').value;
@@ -13,7 +13,7 @@ $(function(){
     	wikiInfo(searchItem);
 
     });
-
+    //RUNS CODE WHEN ENTER KEY IS PRESSED
     $("#input-search").keypress(function(enter){
     	$('#wikipedia-title').html('');
 	    if (enter.which === 13){
@@ -39,6 +39,8 @@ $(function(){
 
     			var j = 0;
 
+                //RETURN TOP 10 MATCHES FOR SEARCH
+
     			while (j !== 10){
 
 		    	/*for(var i = 1; i < data.length; i++){
@@ -47,6 +49,13 @@ $(function(){
 		    		console.log(dataJ[j]);
 		    		
 		    	}*/
+                
+                /*
+                    DATA[3] - URL
+                    DATA[2] - BRIEF PARAGRAPH
+                    DATA[1] - TITLE
+                */
+
 		    	$('#wikipedia-title').append("<li><a href="+data[3][j]+" target=" + "blank" + "><h2>" +data[1][j]+"</h2></a><p>"+data[2][j]+"</p></li>");
 	    		j++;
 	    		//console.log(j);
