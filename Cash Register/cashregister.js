@@ -1,4 +1,5 @@
 function cashregister(){
+	//Cash in Register
 	cid = [
 		['penny', 2.00], 
 		['nickel', 1.50], 
@@ -13,6 +14,7 @@ function cashregister(){
 	];
 	cidAmount =[];
 
+	//LOOP FOR GRABBING EACH COIN OR DOLLAR BILL
 	for (var i = cid.length - 1; i >= 0; i--) {
 		cidName = cid[i];
 		console.log(cidName);
@@ -27,9 +29,12 @@ function cashregister(){
 		// }
 
 	}
+	// ADDS TOTAL AMOUNT IN CID
 	total = (acc, curr) => acc + curr;
 	totalCID = cidAmount.reduce(total);
 	console.log(totalCID);
+
+	//TEST TOTAL, PRICE, AND CASH
 	checkcashregister(43.73, 50.00,totalCID);
 }
 
@@ -38,8 +43,8 @@ function checkcashregister(price, cash, cid){
 	console.log('Price: ' + price);
 	console.log('Cash: ' + cash);
 
+	//AMOUNT CHANGE TO RETURN TO CUSTOMER
 	changeReturned = Math.ceil((cash - price) * 100) / 100;
-	
 	console.log('Change = ' + changeReturned);
 }
 cashregister();
