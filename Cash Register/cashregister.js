@@ -17,10 +17,10 @@ function cashregister(){
 	//LOOP FOR GRABBING EACH COIN OR DOLLAR BILL
 	for (var i = cid.length - 1; i >= 0; i--) {
 		cidName = cid[i];
-		console.log(cidName);
+		//console.log(cidName);
 
 		cidAmount.push(cidName[1]);
-		console.log(cidAmount);
+		//console.log(cidAmount);
 		
 		// for (var j = cidName.length - 1; j >= 0; j--) {
 		// 	cidName[j];
@@ -43,8 +43,39 @@ function checkcashregister(price, cash, cid){
 	console.log('Price: ' + price);
 	console.log('Cash: ' + cash);
 
+
 	//AMOUNT CHANGE TO RETURN TO CUSTOMER
 	changeReturned = Math.ceil((cash - price) * 100) / 100;
 	console.log('Change = ' + changeReturned);
+
+	
+
+	changeToReturn(changeReturned, cid);
 }
-cashregister();
+
+function changeToReturn(changeReturned, cid){
+	//switch statements
+}
+
+function cashBreakdown(givenCash, onehundred, fifty, twenty, ten, five,one, quarter, dime, nickel, penny){
+	console.log(twenty);
+	console.log(ten);
+}
+
+//cashregister();
+
+//SUBMIT BUTTON FUNCTION
+$('#submit').click(function (b){
+
+	var $cashGiven = document.getElementById('cash').value;
+	var $twentyGiven = document.getElementById('twenty').value;
+	var $tenGiven = document.getElementById('ten').value;
+
+	console.log($cashGiven);
+	console.log($twentyGiven);
+	console.log($tenGiven);
+
+	//CASH BREAKDOWN
+	cashBreakdown($twentyGiven, $tenGiven, $cashGiven);
+
+});
