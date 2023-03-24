@@ -71,6 +71,8 @@ This repository contains the projects and programming files that I have complete
   2. [Pomodoro Clock](https://github.com/j14chambers/FCC-Projects/tree/master/pomodoro%clock)
       
       [Codepen URL](https://codepen.io/j14chambers/pen/oyWRjQ)
+      
+  3. [Telephone Number Validator](https://github.com/j14chambers/FCC-Projects/tree/master/Telephone%20Number)
 
 ### Responsive Web Design Projects
     
@@ -86,4 +88,3 @@ This repository contains the projects and programming files that I have complete
  
  5. [Personal Portfolio Webpage](https://codepen.io/j14chambers/full/bWPNvK/)   
  
- 6. [Telephone Number Validator](https://github.com/j14chambers/FCC-Projects/tree/master/Telephone%20Number)
