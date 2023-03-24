@@ -86,4 +86,4 @@ This repository contains the projects and programming files that I have complete
  
  5. [Personal Portfolio Webpage](https://codepen.io/j14chambers/full/bWPNvK/)   
  
- 6. [Telephone Number Validator] (https://github.com/j14chambers/FCC-Projects/tree/master/Telephone%20Number)
+ 6. [Telephone Number Validator](https://github.com/j14chambers/FCC-Projects/tree/master/Telephone%20Number)
